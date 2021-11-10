@@ -58,11 +58,10 @@
           ]
         },
         "orientation": {
-          "markdownDescription": "***Type***: ```Stack Panel```\t\n\t\nDirection the items stack inside ```stack_panel```.\t\n\t\n***Requires***: ```type: stack_panel```\t\n***Default***: ```vertical```",
+          "markdownDescription": "***Type***: ```Stack Panel```\t\n\t\nDirection the items stack inside ```stack_panel```.\t\n\t\n***Requires***: ```***type***: stack_panel```\t\n***Default***: ```vertical```",
           "default": "vertical",
           "oneOf": [
             {
-              "type": "string",
               "enum": [
                 "vertical",
                 "horizontal"
@@ -698,13 +697,16 @@
           ]
         },
         "gamepad_cursor": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Screen```\t\n***Version***: ```+1.2```",
+          "default": true,
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "grid_position": {
+          "markdownDescription": "***Type***: ```Grid```\t\n\t\nA grid is made up of columns and rows. ```grid_position``` specifies what is the location of the element inside the grid. [0, 2] would be column = 1 and row = 3. __[column, row]__",
+          "default": [],
           "oneOf": [
             {
               "type": "array",
@@ -718,6 +720,8 @@
           ]
         },
         "grid_dimensions": {
+          "markdownDescription": "***Type***: ```Grid```\t\n\t\nNumber of columns and rows the grid has. __[columns, rows]__",
+          "default": [],
           "oneOf": [
             {
               "type": "array",
@@ -731,34 +735,40 @@
           ]
         },
         "absorbs_input": {
+          "markdownDescription": "***Type***: ```Screen```\t\n***Default***: ```true```",
+          "default": true,
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "precached_grid_item_count": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Grid```\t\n***Version***: ```1.2 - ?```",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "grid_item_template": {
+          "markdownDescription": "***Type***: ```Grid```",
           "type": "string"
         },
         "grid_dimension_binding": {
+          "markdownDescription": "***Type***: ```Grid```",
           "anyOf": [
             { "$ref": "#/definitions/grid_dimensions_names"},
             { "$ref": "#/definitions/variable" }
           ]
         },
         "collection_name": {
+          "markdownDescription": "***Type***: ```Grid | Stack Panel```",
           "oneOf": [
             { "$ref": "#/definitions/collection_names" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "sound_volume": {
+          "markdownDescription": "***Type***: ```Button | Toggle | Selection Wheel```",
           "oneOf": [
             {
               "type": "number",
@@ -768,6 +778,7 @@
           ]
         },
         "grid_rescaling_type": {
+          "markdownDescription": "***Type***: ```Grid```",
           "oneOf": [
             {
               "enum": [
@@ -780,6 +791,7 @@
           ]
         },
         "grid_fill_direction": {
+          "markdownDescription": "***Type***: ```Grid```",
           "oneOf": [
             {
               "enum": [
@@ -791,6 +803,7 @@
           ]
         },
         "maximum_grid_items": {
+          "markdownDescription": "***Type***: ```Grid```",
           "oneOf": [
             {
               "type": "integer",
@@ -800,34 +813,41 @@
           ]
         },
         "zip_folder": {
+          "markdownDescription": "***Type***: ```Image```",
           "type": "string"
         },
         "enable_profanity_filter": {
+          "markdownDescription": "***Type***: ```Label```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "dropdown_name": {
+          "markdownDescription": "***Type***: ```Dropdown```",
           "type": "string"
         },
         "dropdown_content_control": {
+          "markdownDescription": "***Type***: ```Dropdown```",
           "type": "string"
         },
         "dropdown_area": {
+          "markdownDescription": "***Type***: ```Dropdown```",
           "type": "string"
         },
         "virtual_keyboard_buffer_control": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Edit Box```\t\n***Version***: ```+1.15/1.16```",
           "type": "string"
         },
         "property_bag": {
+          "markdownDescription": "***Type***: ```Any```",
           "oneOf": [
             { "$ref": "#/definitions/property_bag" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "anim_type": {
+          "markdownDescription": "Anim(ation) type is independent of ui element types.",
           "oneOf": [
             {
               "enum": [
@@ -845,34 +865,40 @@
           ]
         },
         "use_skin_gui_scale": {
+          "markdownDescription": "***Type***: ```Custom [paper_doll_renderer]```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "scale_from_starting_alpha": {
-          "description": "...\nVersion: +1.3/1.4",
+          "markdownDescription": "***Anim Type***: ```Alpha```\t\n***Version***: ```+1.3/1.4```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "easing": {
+          "markdownDescription": "***Anim Type***: ```Any (!Wait)```",
           "oneOf": [
             { "$ref": "#/definitions/easing_names" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "reset_event": {
+          "markdownDescription": "***Anim Type***: ```Any```",
           "type": "string"
         },
         "play_event": {
+          "markdownDescription": "***Anim Type***: ```Any```",
           "type": "string"
         },
         "end_event": {
+          "markdownDescription": "***Anim Type***: ```Any```",
           "type": "string"
         },
         "from": {
+          "markdownDescription": "***Anim Type***: ```Any (!Flipbook)```",
           "oneOf": [
             {
               "type": "number"
@@ -894,18 +920,22 @@
           ]
         },
         "next": {
+          "markdownDescription": "***Anim Type***: ```Any (!Flipbook)```",
           "type": "string"
         },
         "destroy_at_end": {
+          "markdownDescription": "***Anim Type***: ```Any (!Flipbook)```",
           "type": "string"
         },
         "duration": {
+          "markdownDescription": "***Anim Type***: ```Any (!Flipbook)```",
           "type": [
             "number",
             "string"
           ]
         },
         "to": {
+          "markdownDescription": "***Anim Type***: ```Any (!Flipbook)```",
           "oneOf": [
             {
               "type": "number"
@@ -927,6 +957,7 @@
           ]
         },
         "initial_uv": {
+          "markdownDescription": "***Anim Type***: ```Flipbook```",
           "type": "array",
           "minItems": 2,
           "maxItems": 2,
@@ -935,6 +966,7 @@
           }
         },
         "uv_size": {
+          "markdownDescription": "***Type***: ```Image```",
           "type": ["array", "string"],
           "minItems": 2,
           "maxItems": 2,
@@ -943,6 +975,7 @@
           }
         },
         "uv": {
+          "markdownDescription": "***Type***: ```Image```",
           "oneOf": [
             {
               "type": "array",
@@ -952,27 +985,29 @@
                 "type": "number"
               }
             },
-            {
-              "type": "string"
-            }
+            { "type": "string" }
           ]
         },
         "frame_count": {
+          "markdownDescription": "***Anim Type***: ```Flipbook```",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "fps": {
+          "markdownDescription": "***Anim Type***: ```Flipbook```",
           "type": "number"
         },
         "reversible": {
+          "markdownDescription": "***Anim Type***: ```Any```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "factory": {
+          "markdownDescription": "***Type***: ```Stack Panel | Panel```",
           "oneOf": [
             { "$ref": "#/definitions/factory" },
             { "$ref": "#/definitions/variable" }
@@ -986,21 +1021,25 @@
           ]
         },  
         "focus_enabled": {
+          "markdownDescription": "***Type***: ```Input Types```",
            "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "constrain_to_rect": {
+          "markdownDescription": "***Type***: ```Edit Box```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "sound_name": {
+          "markdownDescription": "***Type***: ```Button | Toggle | Selection Wheel```",
           "type": "string"
         },
         "sound_pitch": {
+          "markdownDescription": "***Type***: ```Button | Toggle | Selection Wheel```",
           "oneOf": [
             {
               "type": "number",
@@ -1010,24 +1049,29 @@
           ]
         },
         "enable_scissor_test": {
+          "markdownDescription": "***Type***: ```Custom```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "use_place_holder": {
+          "markdownDescription": "***Type***: ```Label```\t\n***Version***: ? - ?",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "place_holder_text": {
+          "markdownDescription": "***Type***: ```Label```\t\n***Version***: ? - ?",
           "type": "string"
         },
         "place_holder_text_color": {
+          "markdownDescription": "***Type***: ```Label```\t\n***Version***: ? - ?",
           "$ref": "#/definitions/color"
         },
         "button_mappings": {
+          "markdownDescription": "***Type***: ```Input Types | Screen```",
           "oneOf": [
             {
               "type": "array",
@@ -1036,18 +1080,21 @@
                 "additionalProperties": false,
                 "properties": {
                   "from_button_id": {
+                    "description": "Button id that fires the event.",
                     "oneOf": [
                       { "$ref": "#/definitions/button_id" },
                       { "$ref": "#/definitions/variable" }
                     ]
                   },
                   "to_button_id": {
+                    "description": "Button id executed when event is fired.",
                     "oneOf": [
                       { "$ref": "#/definitions/button_id" },
                       { "$ref": "#/definitions/variable" }
                     ]
                   },
                   "button_up_right_of_first_refusal": {
+                    "description": "Ignore first click.",
                     "oneOf": [
                       { "type": "boolean" },
                       { "$ref": "#/definitions/variable" }
@@ -1067,6 +1114,7 @@
                     ]
                   },
                   "ignored": {
+                    "description": "Mapping is ignored.",
                     "oneOf": [
                       { "type": "boolean" },
                       { "$ref": "#/definitions/variable" }
@@ -1101,6 +1149,7 @@
                     ]
                   },
                   "consume_event": {
+                    "description": "If false, it will not be focused.",
                     "oneOf": [
                       { "type": "boolean" },
                       { "$ref": "#/definitions/variable" }
@@ -1125,96 +1174,114 @@
           ]
         },
         "send_telemetry": {
+          "markdownDescription": "***Type***: ```Screen```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "screen_not_flushable": {
+          "markdownDescription": "***Type***: ```Screen```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "render_game_behind": {
+          "markdownDescription": "***Type***: ```Screen```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "is_showing_menu": {
+          "markdownDescription": "***Type***: ```Screen```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "low_frequency_rendering": {
+          "markdownDescription": "***Type***: ```Screen```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "is_modal": {
+          "markdownDescription": "***Type***: ```Input Panel```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "should_steal_mouse": {
+          "markdownDescription": "***Type***: ```Screen```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "render_only_when_topmost": {
+          "markdownDescription": "***Type***: ```Screen```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "screen_draws_last": {
+          "markdownDescription": "***Type***: ```Screen```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "color1": {
+          "markdownDescription": "***Type***: ```Custom```",
           "$ref": "#/definitions/color"
         },
         "color2": {
+          "markdownDescription": "***Type***: ```Custom```",
           "$ref": "#/definitions/color"
         },
         "toggle_group_forced_index": {
+          "markdownDescription": "***Type***: ```Toggle```",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "text_control": {
+          "markdownDescription": "***Type***: ```Edit Box```",
           "type": "string"
         },
         "toggle_group_default_selected": {
+          "markdownDescription": "***Type***: ```Toggle```",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "primary_color": {
+          "markdownDescription": "***Type***: ```Custom```",
           "$ref": "#/definitions/color"
         },
         "use_selected_skin": {
+          "markdownDescription": "***Type***: ```Custom```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "default_focus_precedence": {
+          "markdownDescription": "***Type***: ```Button | Toggle | Slider```",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "persona_focus_precedence": {
+          "markdownDescription": "***Type***: ```Button | Toggle | Slider```",
           "description": "...\nVersion: +1.13",
           "oneOf": [
             { "type": "integer" },
@@ -1222,6 +1289,7 @@
           ]
         },
         "slider_inverted": {
+          "markdownDescription": "***Type***: ```Slider```",
           "description": "...\nVersion: +1.5",
           "oneOf": [
             { "type": "boolean" },
@@ -1229,54 +1297,64 @@
           ]
         },
         "focus_identifier": {
+          "markdownDescription": "***Type***: ```Input```",
           "type": "string"
         },
         "control_ids": {
+          "markdownDescription": "***Type***: ```Factory```",
           "type": "object"
         },
         "control_name": {
+          "markdownDescription": "***Type***: ```Factory```",
           "type": "string"
         },
         "modal": {
+          "markdownDescription": "***Type***: ```Input Panel```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "texture_file_system": {
+          "markdownDescription": "***Type***: ```Image```",
           "type": "string"
         },
         "gesture_tracking_button": {
+          "markdownDescription": "***Type***: ```Scroll View```",
           "oneOf": [
             { "$ref": "#/definitions/button_id" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "default_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when button is on it's default state.",
+          "markdownDescription": "***Type***: ```Button | Slider Box | Slider | Edit Box```",
+          "description": "***Type***: Toggle\nName of the child element that will show up when button is on it's default state.",
           "type": "string"
         },
         "hover_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when button is being hovered.",
+          "markdownDescription": "***Type***: ```Button | Slider Box | Slider | Edit Box```",
+          "description": "***Type***: Toggle\nName of the child element that will show up when button is being hovered.",
           "type": "string"
         },
         "locked_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when button is disabled/locked.",
+          "markdownDescription": "***Type***: ```Button | Slider Box | Edit Box```",
+          "description": "***Type***: Toggle\nName of the child element that will show up when button is disabled/locked.",
           "type": "string"
         },
         "pressed_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when toggle is on the \"pressed\" state.",
+          "markdownDescription": "***Type***: ```Button | Slider Box | Edit Box```",
+          "description": "***Type***: Toggle\nName of the child element that will show up when toggle is on the \"pressed\" state.",
           "type": "string"
         },
         "frame_step": {
-          "description": "Anim Type: Flip Book\nHow many frames does the animation has.",
+          "markdownDescription": "***Anim Type***: ```Flip Book```\t\n\t\nHow many frames does the animation has.",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "max_length": {
-          "description": "Type: Edit Box\nMaximum length for the text box text content.",
+          "markdownDescription": "***Type***: ```Edit Box```\t\n\t\nNumber of characters allowed.",
           "oneOf": [
             {
               "type": "integer",
@@ -1286,7 +1364,7 @@
           ]
         },
         "text_type": {
-          "description": "Type: Edit Box\nWhich characters are allow in the text box.",
+          "markdownDescription": "***Type***: ```Edit Box```\t\n\t\nWhich characters are allow in the text box.",
           "oneOf": [
             {
               "enum": [
@@ -1298,15 +1376,15 @@
           ]
         },
         "slider_name": {
-          "description": "Type: Slider",
+          "markdownDescription": "***Type***: ```Slider```",
           "type": "string"
         },
         "slider_track_button": {
-          "description": "Type: Slider",
+          "markdownDescription": "***Type***: ```Slider```",
           "type": "string"
         },
         "slider_direction": {
-          "description": "Type: Slider\nOrientation of the slider movement.",
+          "markdownDescription": "***Type***: ```Slider```\t\n\t\nOrientation of the slider movement.",
           "oneOf": [
             { 
               "enum": [
@@ -1318,64 +1396,65 @@
           ]
         },
         "slider_steps": {
-          "description": "Type: Slider\nHow many steps (or values) does the slider have.",
+          "markdownDescription": "***Type***: ```Slider```\t\n\t\nHow many steps (or values) does the slider have.",
+          "default": 0,
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "slider_collection_name": {
-          "description": "Type: Slider\nName of the hardcoded collection to be used. Be aware that some of them will only work on some screens.",
+          "markdownDescription": "***Type***: ```Slider```\t\n\t\nName of the hardcoded collection to be used. Be aware that some of them will only work on some screens.",
           "oneOf": [
             { "$ref": "#/definitions/collection_names" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "slider_select_on_hover": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Slider```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "indent_control": {
-          "description": "Type: Slider Box\nName of the child element that will show up when slider box is on the \"indent\" state.",
+          "markdownDescription": "***Type***: ```Slider Box```\t\n\t\nName of the child element that will show up when slider box is on the __indent__ state.",
           "type": "string"
         },
         "checked_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when toggle is on the \"checked\" state.",
+          "markdownDescription": "***Type***: ```Toggle```\t\n\t\nName of the child element that will show up when toggle is on the __checked__ state.",
           "type": "string"
         },
         "unchecked_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when toggle is on the \"unchecked\" state.",
+          "markdownDescription": "***Type***: ```Toggle```\t\n\t\nName of the child element that will show up when toggle is on the __unchecked__ state.",
           "type": "string"
         },
         "checked_hover_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when toggle is on the \"checked_hover\" state.",
+          "markdownDescription": "***Type***: ```Toggle```\t\n\t\nName of the child element that will show up when toggle is on the __checked_hover__ state.",
           "type": "string"
         },
         "unchecked_hover_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when toggle is on the \"unchecked_hover\" state.",
+          "markdownDescription": "***Type***: ```Toggle```\t\n\t\nName of the child element that will show up when toggle is on the __unchecked_hover__ state.",
           "type": "string"
         },
         "checked_locked_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when toggle is on the \"checked_locked\" state.",
+          "markdownDescription": "***Type***: ```Toggle```\t\n\t\nName of the child element that will show up when toggle is on the __checked_locked__ state.",
           "type": "string"
         },
         "unchecked_locked_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when toggle is on the \"unchecked_locked\" state.",
+          "markdownDescription": "***Type***: ```Toggle```\t\n\t\nName of the child element that will show up when toggle is on the __unchecked_locked__ state.",
           "type": "string"
         },
         "checked_locked_hover_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when toggle is on the \"checked_locked_hover\" state.",
+          "markdownDescription": "***Type***: ```Toggle```\t\n\t\nName of the child element that will show up when toggle is on the __checked_locked_hover__ state.",
           "type": "string"
         },
         "unchecked_locked_hover_control": {
-          "description": "Type: Toggle\nName of the child element that will show up when toggle is on the \"unchecked_locked_hover\" state.",
+          "markdownDescription": "***Type***: ```Toggle```\t\n\t\nName of the child element that will show up when toggle is on the __unchecked_locked_hover__ state.",
           "type": "string"
         },
         "variables": {
-          "description": "Type: Any\nAdd conditions for changing variables.",
+          "markdownDescription": "***Type***: ```Any```\t\n\t\nAdd conditions for changing variables.",
           "oneOf": [
             {
               "type": "array",
@@ -1408,7 +1487,7 @@
           ]
         },
         "controls": {
-          "description": "UI element children elements",
+          "markdownDescription": "***Type***: ```Any```\t\n\t\nUI element children elements",
           "oneOf": [
             {
               "type": "array",
@@ -1429,7 +1508,7 @@
           ]
         },
         "toggle_manager_behavior": {
-          "description": "...\nVersion: 0.16 - 1.2",
+          "markdownDescription": "***Type***: ```Toggle```\t\n\t\nVersion: 0.16 - 1.2",
           "oneOf": [
             {
               "enum": ["gather"]
@@ -1438,7 +1517,7 @@
           ]
         },
         "toggle_manage_groups": {
-          "description": "...\nVersion: 0.16 - 1.2",
+          "markdownDescription": "***Type***: ```Toggle```\t\n\t\nVersion: 0.16 - 1.2",
           "oneOf": [
             {
               "type": "array",
@@ -1450,21 +1529,25 @@
           ]
         },
         "always_rotate": {
+          "markdownDescription": "***Type***: ```Carousel Label```\t\n***Warning***: this type doesn't work.",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "rotate_speed": {
+          "markdownDescription": "***Type***: ```Carousel Label```\t\n***Warning***: this type doesn't work.",
           "oneOf": [
             { "type": "number" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "hover_color": {
+          "markdownDescription": "***Type***: ```Carousel Label```\t\n***Warning***: this type doesn't work.",
           "$ref": "#/definitions/color"
         },
         "hover_alpha": {
+          "markdownDescription": "***Type***: ```Carousel Label```\t\n***Warning***: this type doesn't work.",
           "oneOf": [
             {
               "type": "number",
@@ -1475,9 +1558,11 @@
           ]
         },
         "pressed_color": {
+          "markdownDescription": "***Type***: ```Carousel Label```\t\n***Warning***: this type doesn't work.",
           "$ref": "#/definitions/color"
         },
         "pressed_alpha": {
+          "markdownDescription": "***Type***: ```Carousel Label```\t\n***Warning***: this type doesn't work.",
           "oneOf": [
             {
               "type": "number",
@@ -1488,6 +1573,7 @@
           ]
         },
         "tiled": {
+          "markdownDescription": "***Type***: ```Image```",
           "oneOf": [
             { "type": "boolean" },
             { "enum": [ "x", "y" ] }, // +1.15/1.16
@@ -1495,11 +1581,11 @@
           ]
         },
         "text_tts": {
-          "description": "Type: Label\nText content for text to speech.\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Label```\t\n\t\nText content for text to speech.\t\n\t\n***Version***: ```+1.15/1.16```",
           "type": "string"
         },
         "text_alignment": {
-          "description": "Type: Label\nText alignment direction.\nDefault: left\nVersion: +1.1",
+          "markdownDescription": "***Type***: ```Label```\t\n\t\nText alignment direction.\t\n\t\n***Default***: ```left```\t\n***Version***: ```+1.1```",
           "anyOf": [
             {
               "enum": [
@@ -1512,7 +1598,7 @@
           ]
         },
         "font_scale_factor": {
-          "description": "Type: Label\nText scale.\nDefault: 1.0\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Label```\t\n\t\nText scale.\t\n\t\n***Default***: ```1.0```\t\n***Version***: ```+1.2```",
           "oneOf": [
             {
               "type": "number",
@@ -1522,21 +1608,21 @@
           ]
         },
         "line_padding": {
-          "description": "Type: Label\nSpace between lines.\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Label```\t\n\t\nSpace between lines.\t\n\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "number" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "hide_hyphen": {
-          "description": "Type: Label\nHide hyphen from word breaking.\nDefault: false\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Label```\t\n\t\nHide hyphen from word breaking.\t\n\t\n***Default***: ```false```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "notify_on_ellipses": {
-          "description": "Type: Label\nArray of names of elements to notify when text gets or loses ellipses.\nVersion: +1.3/1.4",
+          "markdownDescription": "***Type***: ```Label```\t\n\t\nArray of names of elements to notify when text gets or loses ellipses.\t\n\t\n***Version***: ```+1.3/1.4```",
           "oneOf": [
             {
               "type": "array",
@@ -1548,141 +1634,141 @@
           ]
         },
         "tts_value_changed": {
-          "description": "...\nVersion: +1.11",
+          "markdownDescription": "***Type***: ```Slider```\t\n***Version***: ```+1.11```",
           "type": "string"
         },
         "tts_toggle_on": {
-          "description": "...\nVersion: +1.11",
+          "markdownDescription": "***Type***: ```Toggle```\t\n***Version***: ```+1.11```",
           "type": "string"
         },
         "tts_toggle_off": {
-          "description": "...\nVersion: +1.11",
+          "markdownDescription": "***Type***: ```Toggle```\t\n***Version***: ```+1.11```",
           "type": "string"
         },
         "tts_name": {
           "type": "string",
-          "description": "Type: Input Types\nMain text for text to speech.\nVersion: +1.11"
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\nMain text for text to speech.\t\n\t\n***Version***: ```+1.11```"
         },
         "tts_control_header": {
           "type": "string",
-          "description": "Type: Input Types\nText for text to speech.\nVersion: +1.11"
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\nText for text to speech.\t\n\t\n***Version***: ```+1.11```"
         },
         "tts_inherit_siblings": {
-          "description": "Type: Input Types\nElement has siblings that use text to speech and inherits their tts.\nDefault: false\nVersion: +1.11",
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\nElement has siblings that use text to speech and inherits their tts.\t\n\t\n***Default***: ```false```\t\n\t\n***Version***: ```+1.11```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "tts_index_order": {
-          "description": "Type: Input Types\nVersion: +1.16/1.17",
+          "markdownDescription": "***Type***: ```Input Types```\t\n***Version***: ```+1.16/1.17```",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "tts_index_priority": {
-          "description": "Type: Input Types\nElement text to speech priority.\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\nElement text to speech priority.\t\n\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "tts_skip_message": {
-          "description": "Type: Input Types\nDoesn't allow text to speech and skip it.\nDefault: false\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: Input Types\t\n\t\nDoesn't allow text to speech and skip it.\t\n\t\nDefault: false\t\nVersion: +1.15/1.16",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "tts_ignore_count": {
-          "description": "Type: Input Types\nIgnore how many elements are in queue for tts.\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\nIgnore how many elements are in queue for tts.\t\n\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "ttsSectionContainer": {
-          "description": "Type: Input Types\nThe content belongs to a certain tts.\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\nThe content belongs to a certain tts.\t\n\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "tts_section_header": {
-          "description": "Type: Input Types\nText to speech for the tts section.\nVersion: +1.11",
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\nText to speech for the tts section.\t\n\t\n***Version***: ```+1.11```",
           "type": "string"
         },
         "tts_play_on_unchanged_focus_control": {
-          "description": "Type: Input Types\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "tts_control_type_order_priority": {
-          "description": "Type: Input Types\nVersion: +1.11",
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\n***Version***: ```+1.11```",
            "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "tts_value_order_priority": {
-          "description": "Type: Input Types\nVersion: +1.11",
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\n***Version***: ```+1.11```",
            "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "tts_override_control_value": {
-          "description": "...\nVersion: +1.11",
+          "markdownDescription": "***Type***: ```Input Types```\t\n\t\n***Version***: ```+1.11```",
           "type": "string"
         },
         "tab_index": {
-          "description": "Type: Tab (Legacy type).\nIndex of the tab. It must be unique.\nVersion: 0.16 - 1.0",
+          "markdownDescription": "***Type***: ```Tab (Legacy type)```.\t\n\t\nIndex of the tab. It must be unique.\t\n\t\n***Version***: ```0.16 - 1.0```",
           "oneOf": [
            { "type": "integer" },
            { "$ref": "#/definitions/variable" }
          ]
         },
         "tab_content": {
-          "description": "Type: Tab (Legacy type).\nName of the element that shows up when tab is selected\nVersion: 0.16 - 1.0",
+          "markdownDescription": "***Type***: ```Tab (Legacy type)```.\t\n\t\nName of the element that shows up when tab is selected\t\n\t\n***Version***: ```0.16 - 1.0```",
           "type": "string"
         },
         "button_name": {
-          "description": "Type: Selection Wheel",
+          "markdownDescription": "***Type***: ```Selection Wheel```",
           "type": "string"
         },
         "keep_ratio": {
-          "description": "Type: Image\nKeep ratio when resizing image with \"size\".\nVersion: +1.12",
+          "markdownDescription": "***Type***: ```Image```\t\n\t\nKeep ratio when resizing image with __size__.\t\n\t\n***Version***: ```+1.12```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "use_uuid": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Custom```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "priority": {
-          "description": "...\nVersion: +1.13",
+          "markdownDescription": "***Type***: ```Any```\t\n***Version***: ```+1.13```",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "use_priority": {
-          "description": "...\nVersion: +1.13",
+          "markdownDescription": "***Type***: ```?```\t\n***Version***: ```+1.13```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "focus_container_custom_left": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Panel Types with focus_container```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             {
               "type": "array",
@@ -1699,7 +1785,7 @@
           ]
         },
         "focus_container_custom_up": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Panel Types with focus_container```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             {
               "type": "array",
@@ -1716,7 +1802,7 @@
           ]
         },
         "focus_container_custom_down": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Panel Types with focus_container```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             {
               "type": "array",
@@ -1733,7 +1819,7 @@
           ]
         },
         "focus_container_custom_right": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Panel Types with focus_container```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             {
               "type": "array",
@@ -1750,88 +1836,89 @@
           ]
         },
         "debug": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```?```\t\n***Version***: ```+1.15/1.16```",
           "type": "string"
         },
         "always_listening": {
-          "description": "...\nVersion: +1.13",
+          "markdownDescription": "***Type***: ```Edit Box```\t\nVersion: ```+1.13```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "should_be_skipped_during_automation": {
+          "markdownDescription": "***Type***: ```Screen```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "force_texture_reload": {
-          "description": "...\nVersion: +1.1",
+          "markdownDescription": "***Type***: ```Image``´\t\n***Version***: ```+1.1```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "fill": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Image```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "focus_nagivation_mode_down": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Panel Types with focus_container```\t\n***Version***: ```+1.2```",
           "type": "string"
         },
         "focus_nagivation_mode_up": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Panel Types with focus_container```\t\n***Version***: ```+1.2```",
           "type": "string"
         },
         "focus_nagivation_mode_right": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Panel Types with focus_container```\t\n***Version***: ```+1.2```",
           "type": "string"
         },
         "focus_nagivation_mode_left": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Panel Types with focus_container```\t\n***Version***: ```+1.2```",
           "type": "string"
         },
         "collection_index": {
-          "description": "...\nVersion: +1.1",
+          "markdownDescription": "***Type***: ```Any```\t\n***Version***: ```+1.1```",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
-        "use_child_anchors": { // CHECK
+        "use_child_anchors": {
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "inherit_max_sibling_height": {
-          "description": "...\nVersion: +1.3/1.4",
+          "markdownDescription": "***Type***: ```Any```\t\n***Version***: ```+1.3/1.4```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "inherit_max_sibling_width": {
-          "description": "...\nVersion: +1.3/1.4",
+          "markdownDescription": "***Type***: ```Any```\t\n***Version***: ```+1.3/1.4```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "gamepad_cursor_deflection_mode": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Screen```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "tiled_scale": {
-          "description": "Type: Image\nScale of the tiles.\nVersion: +1.0",
+          "markdownDescription": "***Type***: ```Image```\t\n\t\nScale of the tiles.\t\n\t\n***Version***: ```+1.0```",
           "oneOf": [
             {
               "type": "array",
@@ -1845,28 +1932,28 @@
           ]
         },
         "inner_radius": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Selection Wheel```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "number" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "outer_radius": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Selection Wheel```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "number" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "slice_count": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Selection Wheel```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "state_controls": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Selection Wheel```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             {
               "type": "array",
@@ -1878,60 +1965,60 @@
           ]
         },
         "clip_state_change_event": {
-          "description": "...\nVersion: +1.3/1.4",
+          "markdownDescription": "***Type***: ```Any```\t\n***Version***: ```+1.3/1.4```",
           "type": "string"
         },
         "clip_ratio": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Image```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "number" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "allow_debug_missing_texture": {
-          "description": "...\nVersion: +1.11",
+          "markdownDescription": "***Type***: ```Image```\t\n***Version***: ```+1.11```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "use_player_paperdoll": {
-          "description": "...\nVersion: +1.13",
+          "markdownDescription": "***Type***: ```Custom```\t\n***Version***: ```+1.13```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "propagate_alpha": {
-          "description": "Type: Any\nOnly images and labels can use the alpha property. So if you use it in a panel, for example, it won't do anything. However, if \"propagate_alpha\" is enabled, all children and nested children of the element that allow the \"alpha\" property will it have it set to the element alpha value.\nDefault: false\nVersion: +1.1",
+          "markdownDescription": "***Type***: ```Any```\t\nOnly images and labels can use the alpha property. So if you use it in a panel, for example, it won't do anything. However, if __propagate_alpha__ is enabled, all children and nested children of the element that allow the __alpha__ property will it have it set to the element alpha value.\t\n\t\n***Default***: ```false```\t\n***Version***: ```+1.1```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "disable_anim_fast_forward": {
-          "description": "... \nVersion: +1.1",
+          "markdownDescription": "***Type***: ```Any```\t\n***Version***: ```+1.1```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "always_accepts_input": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Screen```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "reset_on_focus_lost": {
-          "description": "...\nVersion: +1.13",
+          "markdownDescription": "***Type***: ```?```\t\n***Version***: ```+1.13```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "focus_magnet_enabled": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```?```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
@@ -1941,49 +2028,49 @@
           "type": "string"
         },
         "camera_tilt_degrees": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Custom```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "number" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "starting_rotation": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Custom```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "number" },
             { "$ref": "#/definitions/variable" }
           ]
         },  
         "consume_hover_events": {
-          "description": "...\nVersion: +1.11",
+          "markdownDescription": "***Type***: ```?```\t\n***Version***: ```+1.11```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "consume_event": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```?```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "cache_screen": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Screen```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "load_screen_immediately": {
-          "description": "...\nVersion: +1.3/1.4",
+          "markdownDescription": "***Type***: ```Screen```\t\n***Version***: ```+1.3/1.4```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "rotation": {
-          "description": "Type: Custom\nAllowed rotation direction.\nVersion: +1.0",
+          "markdownDescription": "***Type***: ```Custom```\t\n\t\nAllowed rotation direction.\t\n\t\n***Version***: ```+1.0```",
           "oneOf": [
             {
               "enum": ["auto", "gesture_x", "custom_y"]
@@ -1998,40 +2085,40 @@
           "$ref": "#/definitions/color"
         },
         "animation_reset_name": {
-          "description": "...\nVersion: +1.3/1.4",
+          "markdownDescription": "***Type***: ```Any```\t\n***Version***: ```+1.3/1.4```",
           "type": "string"
         },
         "iterate_left_button_name": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Selection Wheel```\t\n***Version***: ```+1.15/1.16```",
           "type": "string"
         },
         "iterate_right_button_name": {
-          "description": "...\nVersion: +1.15/1.16",
+          "markdownDescription": "***Type***: ```Selection Wheel```\t\n***Version***: ```+1.15/1.16```",
           "type": "string"
         },
         "initial_button_slice": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Selection Wheel```\t\n***Version***: ```+1.15/1.16```",
           "oneOf": [
             { "type": "integer" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "focus_wrap_enabled": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Input Types```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "always_handle_controller_direction": {
-          "description": "...\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Input Panel```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "focus_mapping": {
-          "description": "Type: Panel Types\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Panel Types```\t\n***Version***: ```+1.2```",
           "oneOf": [
             {
               "type": "array",
@@ -2061,42 +2148,42 @@
           ]
         },
         "focus_container": {
-          "description": "Type: Panel Types\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Panel Types```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "use_last_focus": {
-          "description": "Type: Panel Types\nVersion: +1.2",
+          "markdownDescription": "***Type***: ```Panel Types```\t\n***Version***: ```+1.2```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "force_render_below": {
-          "description": "Type: Screen\nRender previous screen on the screen stack below.\nDefault: false\nVersion: +1.0",
+          "markdownDescription": "***Type***: ```Screen```\t\n\t\nRender previous screen on the screen stack below.\t\n\t\n***Default***: ```false```\t\n\t\n***Version***: ```+1.0```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "bilinear": {
-          "description": "Type: Image\nUse the bilinear function when resizing the image.\nDefault: false\nVersion: +1.5",
+          "markdownDescription": "***Type***: ```Image```\t\n\t\nUse the bilinear function when resizing the image.\t\n\t\n***Default***: ```false```\t\n***Version***: ```+1.5```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "inline_modal": {
-          "description": "Type: Input Panel\nVersion: +1.1",
+          "markdownDescription": "***Type***: ```Input Panel```\t\n***Version***: ```+1.1```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
           ]
         },
         "use_anchored_offset": {
-          "description": "Type: Any\nVersion: +1.1",
+          "markdownDescription": "***Type***: ```Any```\t\n***Version***: ```+1.1```",
           "oneOf": [
             { "type": "boolean" },
             { "$ref": "#/definitions/variable" }
@@ -3162,6 +3249,12 @@
         "button.edit_world",
         "button.activate_world",
         "button.world_slot",
+        "toggle.sidebar_option_selection",
+        "button.select_nav_option",
+        "button.select_screen_nav_button_option",
+        "button.learn_more",
+        "button.toolbox_mode",
+        "button.featured_category",
         //
         "button.exit_gift_screen",
         "button.cycle_promotions_left",
@@ -3594,7 +3687,9 @@
         "automation_broken_server_test_tags",
         "automation_broken_unit_test_tags",
         "automation_soak_test_duration_minutes",
-        "dev_progression_id"
+        "dev_progression_id",
+        // +1.17
+        "#animation_time_field"
       ]
     },
     "hardcoded_slider_names": {
@@ -4013,7 +4108,10 @@
         "on_enter_toggle",
         "on_exit_toggle",
         "toggle.skin_pack_category",
-        "toggle.category_selected"
+        "toggle.category_selected",
+        "toggle.sidebar_verbose_toggle",
+        "toggle.sidebar_option_dropdown",
+        "animation_mode_dropdown"
       ]
     },
     "bind_bag_names": {
@@ -6839,7 +6937,32 @@
         "#world_slot_name",
         "#world_slot_type",
         "#warning_text_visible",
-        "#world_image"
+        "#world_image",
+        "#sidebar_verbose_toggle_check",
+        "#sidebar_option_toggle_check",
+        "#is_screen_nav_button_visible",
+        "#is_verbose_sidebar_nav_button_visible",
+        "#is_sidebar_nav_ready",
+        "#is_simple_sidebar_state_active",
+        "#sidebar_sections",
+        "#is_sidebar_nav_visible",
+        "#is_controller_hover_visible",
+        "#page_loading_finished",
+        "#simple_sidebar_option_toggle_check",
+        "#verbose_sidebar_option_toggle_check",
+        "#achievements_icon_visible",
+        "#toolbox_button_visible",
+        "#swap_vr_keyboard_helper_visible",
+        "#cloud_upload_do_not_show_again",
+        "#is_top_row_button_focus_enabled",
+        "#store_failure_code",
+        "#banner_texture_name",
+        "#banner_texture_filepath",
+        "#title_text_color",
+        "#day_four_string",
+        "#animation_mode_dropdown_enabled",
+        "#animation_mode_dropdown_toggle_label",
+        "#toast_font_type"
       ]
     },
     "grid_dimensions_names": {
