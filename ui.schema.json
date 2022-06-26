@@ -139,6 +139,7 @@
         "sound_name": { "$ref": "#/definitions/prop:sound_name" },
         "sound_volume": { "$ref": "#/definitions/prop:sound_volume" },
         "sound_pitch": { "$ref": "#/definitions/prop:sound_pitch" },
+        "sounds": { "$ref": "#/definitions/prop:sounds" },
         // Button
         "default_control": { "$ref": "#/definitions/prop:default_control" },
         "hover_control": { "$ref": "#/definitions/prop:hover_control" },
