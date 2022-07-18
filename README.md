@@ -4,7 +4,7 @@ VSCode Settings Example
 ```json
 "json.schemas": [
   {
-    "url": "https://github.com/KalmeMarq/Bugrock-JSON-UI-Schemas/raw/main/ui.schema.json",
+    "url": "https://kalmemarq.github.io/Bugrock-JSON-UI-Schemas/ui.schema.json",
     "fileMatch": [
       "*.ui.json",
       "*.uidx",
@@ -14,13 +14,13 @@ VSCode Settings Example
     ]
   },
   {
-    "url": "https://github.com/KalmeMarq/Bugrock-JSON-UI-Schemas/raw/main/ui_defs.schema.json",
+    "url": "https://kalmemarq.github.io/Bugrock-JSON-UI-Schemas/ui_defs.schema.json",
     "fileMatch": [
       "ui/_ui_defs.json"
     ]
   },
   {
-    "url": "https://github.com/KalmeMarq/Bugrock-JSON-UI-Schemas/raw/main/global_variables.schema.json",
+    "url": "https://kalmemarq.github.io/Bugrock-JSON-UI-Schemas/global_variables.schema.json",
     "fileMatch": [
       "ui/_global_variables.json"
     ]
