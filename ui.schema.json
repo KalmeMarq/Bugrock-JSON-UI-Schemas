@@ -94,6 +94,9 @@
         "backup_font_type": { "$ref": "#/definitions/prop:backup_font_type" },
         "text_alignment": { "$ref": "#/definitions/prop:text_alignment" },
         "alignment": { "$ref": "#/definitions/prop:alignment" },
+        "use_place_holder": { "$ref": "#/definitions/prop:use_place_holder" },
+        "place_holder_text": { "$ref": "#/definitions/prop:place_holder_text" },
+        "place_holder_text_color": { "$ref": "#/definitions/prop:place_holder_text_color" },
         // TTS
         "tts_name": { "$ref": "#/definitions/prop:tts_name" },
         "tts_control_header": { "$ref": "#/definitions/prop:tts_control_header" },
@@ -1575,6 +1578,26 @@
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
+    "prop:use_place_holder": {
+      "markdownDescription": "**Type**: ```Label```\t\n\t\n**Version**: ```0.16 Only```",
+      "default": false,
+      "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:place_holder_text": {
+      "markdownDescription": "**Type**: ```Label```\t\n\t\n**Version**: ```0.16 Only```",
+      "type": "string"
+    },
+    "prop:place_holder_text_color": {
+      "markdownDescription": "**Type**: ```Label```\t\n\t\n**Version**: ```0.16 Only```",
+      "oneOf": [
+        { "$ref": "#/definitions/vl:color" },
+        { "$ref": "#/definitions/vl:animation" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
     // TTS
     "prop:tts_name": {
       "type": "string",
@@ -1689,7 +1712,7 @@
     "prop:texture": {
       "markdownDescription": "**Type**: ```Image```\t\n\t\nImage path starting from pack root.",
       "type": "string",
-      "pattern": "^(#[a-zA-Z0-9_]+|\\$[a-zA-Z0-9_-]+|[a-zA-Z0-9_-]*((\\\\|\\/)[a-zA-Z0-9_-]*){0,}(.(png|jpe?g))?)$",
+      "pattern": "^(#[a-zA-Z0-9_]+|\\$[:a-zA-Z0-9_-]+|[:a-zA-Z0-9_-]*((\\\\|\\/)[:a-zA-Z0-9_-]*){0,}(.(png|jpe?g))?)$",
       "default": ""
     },
     "prop:allow_debug_missing_texture": {
