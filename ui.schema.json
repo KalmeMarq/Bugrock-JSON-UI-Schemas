@@ -111,6 +111,7 @@
         "ttsSectionContainer": { "$ref": "#/definitions/prop:ttsSectionContainer" },
         "tts_ignore_count": { "$ref": "#/definitions/prop:tts_ignore_count" },
         "tts_skip_message": { "$ref": "#/definitions/prop:tts_skip_message" },
+        "tts_skip_children": { "$ref": "#/definitions/prop:tts_skip_children" },
         "tts_value_order_priority": { "$ref": "#/definitions/prop:tts_value_order_priority" },
         "tts_play_on_unchanged_focus_control": { "$ref": "#/definitions/prop:tts_play_on_unchanged_focus_control" },
         "tts_ignore_subsections": { "$ref": "#/definitions/prop:tts_ignore_subsections" },
@@ -203,17 +204,20 @@
         "slider_render_bar_outline_color": { "$ref": "#/definitions/prop:slider_render_bar_outline_color" }, 
         "slider_render_bar_background_hover_color": { "$ref": "#/definitions/prop:slider_render_bar_background_hover_color" }, 
         "slider_render_bar_progress_hover_color": { "$ref": "#/definitions/prop:slider_render_bar_progress_hover_color" }, 
-        "slider_render_bar_outline_hover_color": { "$ref": "#/definitions/prop:slider_render_bar_outline_hover_color" }, 
+        "slider_render_bar_outline_hover_color": { "$ref": "#/definitions/prop:slider_render_bar_outline_hover_color" },
+        // Slider Box
+        "indent_control": { "$ref": "#/definitions/prop:indent_control" },
         // Tab (Legacy)
         "tab_index": { "$ref": "#/definitions/prop:tab_index" },
         "tab_control": { "$ref": "#/definitions/prop:tab_control" },
+        "tab_content": { "$ref": "#/definitions/prop:tab_content" },
         // Carousel Label (Legacy/Dev)
-        // "always_rotate": { "$ref": "#/definitions/prop:always_rotate" },
-        // "rotate_speed": { "$ref": "#/definitions/prop:rotate_speed" },
-        // "hover_color": { "$ref": "#/definitions/prop:hover_color" },
-        // "hover_alpha": { "$ref": "#/definitions/prop:hover_alpha" },
-        // "pressed_color": { "$ref": "#/definitions/prop:pressed_color" },
-        // "pressed_alpha": { "$ref": "#/definitions/prop:pressed_alpha" },
+        "always_rotate": { "$ref": "#/definitions/prop:always_rotate" },
+        "rotate_speed": { "$ref": "#/definitions/prop:rotate_speed" },
+        "hover_color": { "$ref": "#/definitions/prop:hover_color" },
+        "hover_alpha": { "$ref": "#/definitions/prop:hover_alpha" },
+        "pressed_color": { "$ref": "#/definitions/prop:pressed_color" },
+        "pressed_alpha": { "$ref": "#/definitions/prop:pressed_alpha" },
         // Grid
         "grid_dimensions": { "$ref": "#/definitions/prop:grid_dimensions"},
         "maximum_grid_items": { "$ref": "#/definitions/prop:maximum_grid_items"},
@@ -838,6 +842,24 @@
               ]
             },
             "round_value": {
+              "oneOf": [
+                { "type": "boolean" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
+            },
+            "drop_shadow": {
+              "oneOf": [
+                { "type": "boolean" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
+            },
+            "round_up": {
+              "oneOf": [
+                { "type": "boolean" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
+            },
+            "is_storage_bar": {
               "oneOf": [
                 { "type": "boolean" },
                 { "$ref": "#/definitions/vl:variable" }
@@ -1669,6 +1691,13 @@
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
+    "prop:tts_skip_children": {
+      "markdownDescription": "**Type**: Any\t\n\t\nDefault: false\t\nVersion: +1.19",
+      "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
     "prop:tts_value_order_priority": {
       "markdownDescription": "**Type**: ```Any```\t\n\t\n**Version**: ```+1.11```",
       "oneOf": [
@@ -2321,7 +2350,13 @@
         { "$ref": "#/definitions/vl:color" },
         { "$ref": "#/definitions/vl:variable" }
       ]
-    }, 
+    },
+    // Slider Box
+    "prop:indent_control": {
+      "markdownDescription": "**Type**: ```Slider Box```",
+      "type": "string",
+      "examples": ["indent"]
+    },
     // Tab (Legacy)
     "prop:tab_index": {
       "markdownDescription": "**Type**: ```Tab (Legacy)```",
@@ -2333,6 +2368,65 @@
     "prop:tab_control": {
       "type": "string",
       "markdownDescription": "**Type**: ```Tab (Legacy)```\t\n\t\nName of the element that shows up when tab is selected.\t\n\t\n**Version**: ```0.16 - 1.0```"
+    },
+    "prop:tab_content": {
+      "type": "string",
+      "markdownDescription": "**Type**: ```Tab (Legacy)```\t\n\t\nName of the element that shows up when tab is selected.\t\n\t\n**Version**: ```0.16 - 1.0```"
+    },
+    // Carousel Label (Legacy/Dev)
+    "prop:always_rotate": {
+      "markdownDescription": "**Type**: ```Carousel Label (Legacy/Dev)```\t\n\t\n**Version**: ```None```",
+      "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:rotate_speed": {
+      "markdownDescription": "**Type**: ```Carousel Label (Legacy/Dev)```\t\n\t\n**Version**: ```None```",
+      "oneOf": [
+        { "type": "number" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:hover_color": {
+      "markdownDescription": "**Type**: ```Carousel Label (Legacy/Dev)```\t\n\t\n**Version**: ```None```",
+      "default": [],
+      "oneOf": [
+        { "$ref": "#/definitions/vl:color" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:hover_alpha": {
+      "markdownDescription": "**Type**: ```Carousel Label (Legacy/Dev)```\t\n\t\n**Default**: ```1.0```\t\n\t\n**Version**: ```None```",
+      "default": 1.0,
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:pressed_color": {
+      "markdownDescription": "**Type**: ```Carousel Label (Legacy/Dev)```\t\n\t\n**Version**: ```None```",
+      "default": [],
+      "oneOf": [
+        { "$ref": "#/definitions/vl:color" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:pressed_alpha": {
+      "markdownDescription": "**Type**: ```Carousel Label (Legacy/Dev)```\t\n\t\n**Default**: ```1.0```\t\n\t\n**Version**: ```None```",
+      "default": 1.0,
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
     },
     // Grid
     "prop:grid_dimensions": {
@@ -3547,7 +3641,9 @@
         "debug_overlay_renderer",
         "background_renderer",
         // Chemistry
-        "bohr_model_renderer"
+        "bohr_model_renderer",
+        // 0.16
+        "toast_renderer"
       ]
     },
     "vl:easing": {
@@ -4588,6 +4684,8 @@
         "button.learn_more",
         "button.toolbox_mode",
         "button.featured_category",
+        // +1.19
+        "button.turn_character_select_doll",
         //
         "button.exit_gift_screen",
         "button.cycle_promotions_left",
