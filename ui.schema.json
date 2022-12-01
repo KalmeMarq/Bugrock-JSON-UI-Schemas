@@ -1,16 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
-  "required": [
-    "namespace"
-  ],
-  "properties": {
-    "namespace": {
-      "description": "Identifier for the file. It must be unique and must be different from the vanilla namespaces.",
-      "type": "string",
-      "minLength": 1
-    }
-  },
   "definitions": {
     "ui_control": {
       "type": "object",
@@ -328,7 +318,25 @@
         "use_uuid": { "$ref": "#/definitions/prop:use_uuid" }, 
         "use_skin_gui_scale": { "$ref": "#/definitions/prop:use_skin_gui_scale" }, 
         "use_player_paperdoll ": { "$ref": "#/definitions/prop:use_player_paperdoll" }, 
-        "rotation": { "$ref": "#/definitions/prop:rotation" }, 
+        "rotation": { "$ref": "#/definitions/prop:rotation" },
+        "modelsize": { "$ref": "#/definitions/prop:modelsize" },
+        "animation_looped": { "$ref": "#/definitions/prop:animation_looped" },
+        "animation": { "$ref": "#/definitions/prop:animation" },
+        // Custom - Netease Paper Doll Renderer
+        "screen_offset": { "$ref": "#/definitions/prop:screen_offset" },
+        "screen_scale": { "$ref": "#/definitions/prop:screen_scale" },
+        "mob_body_rot_y": { "$ref": "#/definitions/prop:mob_body_rot_y" },
+        "mob_head_rot_y": { "$ref": "#/definitions/prop:mob_head_rot_y" },
+        "init_rot_y": { "$ref": "#/definitions/prop:init_rot_y" },
+        "skeleton_model_name": { "$ref": "#/definitions/prop:skeleton_model_name" },
+        "entity_identifier": { "$ref": "#/definitions/prop:entity_identifier" },
+        // Custom - Netease MiniMap Renderer
+        // "size_grade": { "$ref": "#/definitions/prop:size_grade" },
+        "use_default_face_icon": { "$ref": "#/definitions/prop:use_default_face_icon" },
+        "face_icon_bg_color": { "$ref": "#/definitions/prop:face_icon_bg_color" },
+        "enable_live_update": { "$ref": "#/definitions/prop:enable_live_update" },
+        "live_update_interval": { "$ref": "#/definitions/prop:live_update_interval" },
+        "highest_y": { "$ref": "#/definitions/prop:highest_y" },
         // Custom - Progress Bar Renderer
         "primary_color": { "$ref": "#/definitions/prop:primary_color" },
         "secondary_color": { "$ref": "#/definitions/prop:secondary_color" },
@@ -399,13 +407,7 @@
             "type": "object",
             "additionalProperties": false,
             "patternProperties": {
-              "^[\\p{L}\\p{Number}_\\-\/:\\$]+@[\\p{L}\\p{Number}_\\-\/:.\\$]+$": {
-                "$ref": "#/definitions/ui_control"
-              },
-              "^[\\p{L}\\p{Number}_\\-\/:]+$": {
-                "$ref": "#/definitions/ui_control_with_type_required"
-              },
-              "^\\$[\\p{L}\\p{Number}_\\-\/:]+$": {
+              "^\\$?[a-z0-9:\\-_]+(@((\\$[a-z0-9:\\-_]+)|(([a-z0-9:\\-_]+\\.)?[a-z0-9:\\-_]+)))?$": {
                 "$ref": "#/definitions/ui_control"
               }
             }
@@ -1808,7 +1810,7 @@
       "default": true,
       "oneOf": [
         { "type": "boolean" },
-        { "enum": ["x", "y"] },
+        { "enum": ["x", "y", "xy", "yx"] },
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
@@ -1999,6 +2001,9 @@
                 ]
               },
               "event_type": {
+                "type": "string"
+              },
+              "button_name": {
                 "type": "string"
               }
             }
@@ -3347,6 +3352,113 @@
         { "$ref": "#/definitions/vl:variable" }
       ]
     }, 
+    "prop:modelsize": {
+      "markdownDescription": "**Type**: ```Custom (Paper Doll Renderer | Netease Paper Doll Renderer)",
+      "default": 1.0,
+      "oneOf": [
+        { "type": "number" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:animation_looped": {
+      "markdownDescription": "**Type**: ```Custom (Paper Doll Renderer | Netease Paper Doll Renderer)",
+      "default": true,
+      "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:animation": {
+      "markdownDescription": "**Type**: ```Custom (Paper Doll Renderer | Netease Paper Doll Renderer)",
+      "type": "string"
+    },
+     // Custom - Netease Paper Doll Renderer
+    "prop:screen_offset": {
+      "markdownDescription": "**Type**: `` Custom (Netease Paper Doll Renderer)"
+    },
+    "prop:screen_scale": {
+      "markdownDescription": "**Type**: `` Custom (Netease Paper Doll Renderer)",
+      "default": -1.0,
+      "oneOf": [
+        { "type": "number" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:mob_body_rot_y": {
+      "markdownDescription": "**Type**: `` Custom (Netease Paper Doll Renderer)",
+      "default": 0.0,
+      "oneOf": [
+        { "type": "number" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:mob_head_rot_y": {
+      "markdownDescription": "**Type**: `` Custom (Netease Paper Doll Renderer)",
+      "default": 0.0,
+      "oneOf": [
+        { "type": "number" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:init_rot_y": {
+      "markdownDescription": "**Type**: `` Custom (Netease Paper Doll Renderer)",
+      "default": 0.0,
+      "oneOf": [
+        { "type": "number" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:skeleton_model_name": {
+      "markdownDescription": "**Type**: `` Custom (Netease Paper Doll Renderer)",
+      "type": "string"
+    },
+    "prop:entity_identifier": {
+      "markdownDescription": "**Type**: `` Custom (Netease Paper Doll Renderer)",
+      "type": "string"
+    },
+    // Custom - Netease MiniMap Renderer
+    // "prop:size_grade": {
+    //   "markdownDescription": "**Types**: ``Custom (Mini Map Renderer)",
+    // },
+    "prop:use_default_face_icon": {
+      "markdownDescription": "**Types**: ``Custom (Mini Map Renderer)",
+      "default": true,
+      "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:face_icon_bg_color": {
+      "markdownDescription": "**Types**: ``Custom (Mini Map Renderer)",
+      "default": [],
+      "oneOf": [
+        { "$ref": "#/definitions/vl:color" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:enable_live_update": {
+      "markdownDescription": "**Types**: ``Custom (Mini Map Renderer)",
+      "default": false,
+      "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:live_update_interval": {
+      "markdownDescription": "**Types**: ``Custom (Mini Map Renderer)",
+      "default": 60,
+      "oneOf": [
+        { "type": "integer" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:highest_y": {
+      "markdownDescription": "**Types**: ``Custom (Mini Map Renderer)",
+      "oneOf": [
+        { "enum": [0, -1] },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
     // Custom - Progress Bar Renderer
     "prop:primary_color": {
       "markdownDescription": "**Type**: ```Custom (Prograss Bar Renderer)```",
@@ -3409,7 +3521,7 @@
     "prop:debug": {
       "markdownDescription": "**Type**: ```Any```",
       "oneOf": [
-        { "$ref": "#/definitions/vl:debug" },
+        { "$ref": "#/definitions/vl:debug_color" },
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
@@ -3444,7 +3556,15 @@
         "scroll_track",
         // Legacy
         "tab",
-        "carousel_label"
+        "carousel_label",
+        // Netease
+        "combox",
+        "layout",
+        "stack_grid",
+        "joystick",
+        "rich_text",
+        "sixteen_nine_layout",
+        "mul_lines"
       ]
     },
     "vl:anchor": {
@@ -3521,7 +3641,21 @@
         "nil",
         "cyan",
         "red",
+        "grey",
+        "gray",
         "blue"
+      ]
+    },
+    "vl:debug_color": {
+      "enum": [
+        "white",
+        "black",
+        "gray",
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple"
       ]
     },
     "vl:offset": {
@@ -3553,18 +3687,9 @@
         ]
       }
     },
-    "vl:debug": {
-      "enum": [
-        "black",
-        "white",
-        "gray",
-        "red",
-        "yellow",
-        "purple"
-      ]
-    },
     "vl:rotation": {
       "enum": [
+        "none",
         "auto",
         "gesture_x",
         "custom_y"
@@ -3643,7 +3768,10 @@
         // Chemistry
         "bohr_model_renderer",
         // 0.16
-        "toast_renderer"
+        "toast_renderer",
+        // Netease
+        "netease_paper_doll_renderer",
+        "netease_mini_map_renderer"
       ]
     },
     "vl:easing": {
@@ -3698,6 +3826,7 @@
     },
     "vl:input_mode_condition": {
       "enum": [
+        "any",
         "not_gaze",
         "not_gamepad",
         "gamepad_and_not_gaze" // +1.2
@@ -8419,12 +8548,17 @@
       ]
     }
   },
+  "additionalProperties": false,
+  "properties": {
+    "namespace": {
+      "description": "Identifier for the file. It must be unique and must be different from the vanilla namespaces.",
+      "type": "string",
+      "minLength": 1
+    }
+  },
   "patternProperties": {
-    "^[\\p{L}\\p{Number}_\\-\/:]+@[\\p{L}\\p{Number}_\\-\/:.]+$": {
+    "^[a-z0-9:\\-_]+(@([a-z0-9:\\-_]+\\.)?[a-z0-9:\\-_]+)?$": {
       "$ref": "#/definitions/ui_control"
-    },
-    "^[\\p{L}\\p{Number}_\\-\/:]+$": {
-      "$ref": "#/definitions/ui_control_with_type_required"
     }
   }
 }
