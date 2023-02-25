@@ -487,13 +487,44 @@
                 "type": "string"
               },
               "where": {
-                "type": "object"
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "$ref": "#/definitions/vl:binding_item"
+                  }
+                ]
               },
               "target": {
                 "type": "object"
               },
               "target_control": {
                 "type": "string"
+              },
+              "value": {
+                "oneOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "patternProperties": {
+                            "^\\$?[a-zA-Z0-9:\\-_]+(@((\\$[a-zA-Z0-9:\\-_]+)|(([a-zA-Z0-9:\\-_]+\\.)?[a-zA-Z0-9:\\-_]+)))?$": {
+                              "$ref": "#/definitions/ui_control"
+                            }
+                          }
+                        },
+                        { "$ref": "#/definitions/vl:binding_item" }
+                      ]
+                    }
+                  }
+                ]
               },
               "operation": {
                 "oneOf": [
@@ -571,15 +602,15 @@
       ]
     },
     "anim_prop:next": {
-      "markdownDescription": "**Anim Type**: ```Any (!Flipbook)```",
+      "markdownDescription": "**Anim Type**: ```Any (!Flipbook)```\t\n\t\nWhat animation to play next following this current one.",
       "type": "string"
     },
     "anim_prop:destroy_at_end": {
-      "markdownDescription": "**Anim Type**: ```Any (!Flipbook)```",
+      "markdownDescription": "**Anim Type**: ```Any (!Flipbook)```\t\n\t\nThe name of control element that will be destroyed when the animation ends.",
       "type": "string"
     },
     "anim_prop:play_event": {
-      "markdownDescription": "**Anim Type**: ```Any```",
+      "markdownDescription": "**Anim Type**: ```Any```\t\n\t\nEvent that triggers this animation to start.",
       "type": "string"
     },
     "anim_prop:end_event": {
@@ -627,7 +658,8 @@
           "maxItems": 2,
           "items": {
             "type": "number"
-          }
+          },
+          "default": [0, 0]
         },
         { "$ref": "#/definitions/vl:variable" }
       ]
@@ -640,14 +672,14 @@
       ]
     },
     "anim_prop:frame_count": {
-      "markdownDescription": "**Anim Type**: ```Flipbook```",
+      "markdownDescription": "**Anim Type**: ```Flipbook```\t\n\t\nThe amount of frames the animation has.",
       "oneOf": [
         { "type": "number" },
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
     "anim_prop:frame_step": {
-      "markdownDescription": "**Anim Type**: ```Flipbook```",
+      "markdownDescription": "**Anim Type**: ```Flipbook```\t\n\t\nHow many pixels to advance to get to the next frame.",
       "oneOf": [
         { "type": "number" },
         { "$ref": "#/definitions/vl:variable" }
@@ -782,7 +814,7 @@
       "oneOf": [
         { 
           "type": "object",
-          "additionalProperties": false,
+          "additionalProperties": true,
           "properties": {
             // Live Horse Renderer
             "#entity_id": {
@@ -1375,14 +1407,14 @@
       ]
     },
     "prop:anchor_from": {
-      "markdownDescription": "**Type**: ```Any```\t\n\t\nStart position origin relative to parent element.\t\n\t\n**Default**: ```center```",
+      "markdownDescription": "**Type**: ```Any```\t\n\t\nAnchor in the parent element.\t\n\t\n**Default**: ```center```",
       "oneOf": [
         { "$ref": "#/definitions/vl:anchor" },
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
     "prop:anchor_to": {
-      "markdownDescription": "**Type**: ```Any```\t\n\t\nEnd position origin relative to parent element.\t\n\t\n**Default**: ```center```",
+      "markdownDescription": "**Type**: ```Any```\t\n\t\nAnchor in this element.\t\n\t\n**Default**: ```center```",
       "oneOf": [
         { "$ref": "#/definitions/vl:anchor" },
         { "$ref": "#/definitions/vl:variable" }
@@ -1533,7 +1565,7 @@
       ]
     },
     "prop:enable_profanity_filter": {
-      "markdownDescription": "**Type**: ```Label```\t\n\t\nIf 'bad' words should be censored.\t\n\t\n**Default**: ```false```",
+      "markdownDescription": "**Type**: ```Label```\t\n\t\nCensore words included in the profanity_filter.wlist file.\t\n\t\n**Default**: ```false```",
       "default": false,
       "oneOf": [
         { "type": "boolean" },
@@ -1602,14 +1634,14 @@
       ]
     },
     "prop:text_alignment": {
-      "markdownDescription": "**Type**: ```Label```\t\n\t\nText alignment direction. It adjusts automatically based on ```anchor_from```/```anchor_to```.\t\n\t\n**Version**: ```+1.1```",
+      "markdownDescription": "**Type**: ```Label```\t\n\t\nText alignment direction when the text element is bigger than the text content itself.\t\n\t\n**Version**: ```+1.1```",
       "oneOf": [
         { "$ref": "#/definitions/vl:text_alignment" },
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
     "prop:alignment": {
-      "markdownDescription": "**Type**: ```Label```\t\n\t\nText alignment direction. It adjusts automatically based on ```anchor_from```/```anchor_to```.\t\n\t\n**Version**: ```? - ?```",
+      "markdownDescription": "**Type**: ```Label```\t\n\t\nText alignment direction when the text element is bigger than the text content itself.\t\n\t\n**Version**: ```? - ?```",
       "oneOf": [
         { "$ref": "#/definitions/vl:text_alignment" },
         { "$ref": "#/definitions/vl:variable" }
@@ -1801,7 +1833,11 @@
     },
     "prop:texture_file_system": {
       "markdownDescription": "**Type**: ```Image```",
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "RawPath",
+        "InAppPackage"
+      ]
     },
     "prop:nineslice_size": {
       "markdownDescription": "**Type**: ```Image```\t\n\t\n9-slice. __[x1, y1, x2, y2]__ __[x1/x2, y1/y2]__ or just a number for all of them. An explanation of ninepath: [https://wiresareobsolete.com/2010/06/9-patches/](https://wiresareobsolete.com/2010/06/9-patches/).",
@@ -2027,22 +2063,22 @@
     },
     // Button
     "prop:default_control": {
-      "markdownDescription": "**Type**: ```Button | Slider Box | Slider | Edit Box```",
+      "markdownDescription": "**Type**: ```Button | Slider Box | Slider | Edit Box```\t\n\t\nName of the child control to show only in the default state.",
       "type": "string",
       "examples": ["default"]
     },
     "prop:hover_control": {
-      "markdownDescription": "**Type**: ```Button | Slider Box | Slider | Edit Box```",
+      "markdownDescription": "**Type**: ```Button | Slider Box | Slider | Edit Box```\t\n\t\nName of the child control to show only in the hover state.",
       "type": "string",
       "examples": ["hover"]
     },
     "prop:pressed_control": {
-      "markdownDescription": "**Type**: ```Button | Edit Box```",
+      "markdownDescription": "**Type**: ```Button | Edit Box```\t\n\t\nName of the child control to show only in the pressed state.",
       "type": "string",
       "examples": ["pressed"]
     },
     "prop:locked_control": {
-      "markdownDescription": "**Type**: ```Button | Slider Box | Edit Box```",
+      "markdownDescription": "**Type**: ```Button | Slider Box | Edit Box```\t\n\t\nName of the child control to show only in the locked/disabled state.",
       "type": "string",
       "examples": ["locked"]
     },
@@ -2371,7 +2407,7 @@
     },
     // Slider Box
     "prop:indent_control": {
-      "markdownDescription": "**Type**: ```Slider Box```",
+      "markdownDescription": "**Type**: ```Slider Box```\t\n\t\nName of the child control to show only in the indent state.",
       "type": "string",
       "examples": ["indent"]
     },
@@ -2773,72 +2809,73 @@
       "oneOf": [
         {
           "type": "array",
-          "items": {
-            "type": "object",
-            "additionalItems": false,
-            "properties": {
-              "ignored": {
-                "markdownDescription": "If binding is completely ignored.\t\n\t\n**Default**: ```false```\t\n\t\n**Version**: ```+1.17```",
-                "default": false,
-                "oneOf": [
-                  { "type": "boolean" },
-                  { "$ref": "#/definitions/vl:variable" }
-                ]
-              },
-              "binding_type": {
-                "description": "Which kind of data binding will be used.",
-                "oneOf": [
-                  { "$ref": "#/definitions/vl:binding_type" },
-                  { "$ref": "#/definitions/vl:variable" }
-                ]
-              },
-              "binding_name": {
-                "description": "Stores the value of the data bind name or condition with it.",
-                "type": "string"
-              },
-              "binding_name_override": {
-                "markdownDescription": "Name of the UI element property that will apply the stored value in ```binding_name```.\t\n\t\n**Requires**: ```binding_name```",
-                "type": "string"
-              },
-              "binding_collection_name": {
-                "markdownDescription": "Name of the collection of items to be used.",
-                "type": "string"
-              },
-              "binding_collection_prefix": {
-                "markdownDescription": "**Requires**: ```binding_collection_name```",
-                "type": "string"
-              },
-              "binding_condition": {
-                "description": "Condition for the data binding to happen.",
-                "oneOf": [
-                  { "$ref": "#/definitions/vl:binding_condition" },
-                  { "$ref": "#/definitions/vl:variable" }
-                ]
-              },
-              "source_control_name": {
-                "description": "Name of the UI element to observe its property values.",
-                "type": "string"
-              },
-              "source_property_name": {
-                "markdownDescription": "Store the value of the property named of the UI element refered in ```source_control_name```.\t\n\t\n**Requires**: ```source_control_name```",
-                "type": "string"
-              },
-              "target_property_name": {
-                "markdownDescription": "The UI element property that the stored value in ```source_property_name``` will be applied to.\t\n\t\n**Requires**: ```source_property_name``` and ```source_control_name```",
-                "type": "string"
-              },
-              "resolve_sibling_scope": {
-                "default": false,
-                "oneOf": [
-                  { "type": "boolean" },
-                  { "$ref": "#/definitions/vl:variable" }
-                ]
-              }
-            }
-          }
+          "items": { "$ref": "#/definitions/vl:binding_item" }
         },
         { "$ref": "#/definitions/vl:variable" }
       ]
+    },
+    "vl:binding_item": {
+      "type": "object",
+      "additionalItems": false,
+      "properties": {
+        "ignored": {
+          "markdownDescription": "If binding is completely ignored.\t\n\t\n**Default**: ```false```\t\n\t\n**Version**: ```+1.17```",
+          "default": false,
+          "oneOf": [
+            { "type": "boolean" },
+            { "$ref": "#/definitions/vl:variable" }
+          ]
+        },
+        "binding_type": {
+          "description": "Which kind of data binding will be used.",
+          "oneOf": [
+            { "$ref": "#/definitions/vl:binding_type" },
+            { "$ref": "#/definitions/vl:variable" }
+          ]
+        },
+        "binding_name": {
+          "description": "Stores the value of the data bind name or condition with it.",
+          "type": "string"
+        },
+        "binding_name_override": {
+          "markdownDescription": "Name of the UI element property that will apply the stored value in ```binding_name```.\t\n\t\n**Requires**: ```binding_name```",
+          "type": "string"
+        },
+        "binding_collection_name": {
+          "markdownDescription": "Name of the collection of items to be used.",
+          "type": "string"
+        },
+        "binding_collection_prefix": {
+          "markdownDescription": "**Requires**: ```binding_collection_name```",
+          "type": "string"
+        },
+        "binding_condition": {
+          "description": "Condition for the data binding to happen.",
+          "oneOf": [
+            { "$ref": "#/definitions/vl:binding_condition" },
+            { "$ref": "#/definitions/vl:variable" }
+          ]
+        },
+        "source_control_name": {
+          "description": "Name of the UI element to observe its property values.",
+          "type": "string"
+        },
+        "source_property_name": {
+          "markdownDescription": "Store the value of the property named of the UI element refered in ```source_control_name```.\t\n\t\n**Requires**: ```source_control_name```",
+          "type": "string"
+        },
+        "target_property_name": {
+          "markdownDescription": "The UI element property that the stored value in ```source_property_name``` will be applied to.\t\n\t\n**Requires**: ```source_property_name``` and ```source_control_name```",
+          "type": "string"
+        },
+        "resolve_sibling_scope": {
+          "default": false,
+          "oneOf": [
+            { "type": "boolean" },
+            { "$ref": "#/definitions/vl:variable" }
+          ]
+        }
+      }
     },
     // Collection
     "prop:collection_name": {
@@ -3854,6 +3891,8 @@
         "debug_overlay_renderer",
         "background_renderer",
         "bundle_renderer",
+        "editor_gizmo_renderer",
+        "dash_renderer",
         // Chemistry
         "bohr_model_renderer",
         // 0.16
