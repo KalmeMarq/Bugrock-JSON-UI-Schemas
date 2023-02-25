@@ -197,6 +197,10 @@
         "slider_render_bar_outline_hover_color": { "$ref": "#/definitions/prop:slider_render_bar_outline_hover_color" },
         // Slider Box
         "indent_control": { "$ref": "#/definitions/prop:indent_control" },
+        // Grid Page Indicator
+        "grid_item_when_current": { "$ref": "#/definitions/prop:grid_item_when_current" },
+        "grid_item_when_not_current": { "$ref": "#/definitions/prop:grid_item_when_not_current" },
+        "cycler_manager_size_control_target": { "$ref": "#/definitions/prop:cycler_manager_size_control_target" },
         // Tab (Legacy)
         "tab_index": { "$ref": "#/definitions/prop:tab_index" },
         "tab_control": { "$ref": "#/definitions/prop:tab_control" },
@@ -243,6 +247,7 @@
         "scroll_content": { "$ref": "#/definitions/prop:scroll_content" },
         "scroll_box_and_track_panel": { "$ref": "#/definitions/prop:scroll_box_and_track_panel" },
         "jump_to_bottom_on_update": { "$ref": "#/definitions/prop:jump_to_bottom_on_update" },
+        "allow_scroll_even_when_content_fits": { "$ref": "#/definitions/prop:allow_scroll_even_when_content_fits" },
         // Factory
         "factory": { "$ref": "#/definitions/prop:factory" },
         "control_name": { "$ref": "#/definitions/prop:control_name" },
@@ -348,7 +353,15 @@
         "text_color": { "$ref": "#/definitions/prop:text_color" },
         "background_color": { "$ref": "#/definitions/prop:background_color" },
         // Debug Renderer
-        "debug": { "$ref": "#/definitions/prop:debug" }
+        "debug": { "$ref": "#/definitions/prop:debug" },
+        // Cycler
+        "target_cycler_to_compare": { "$ref": "#/definitions/prop:target_cycler_to_compare" },
+        "next_sub_page_button_name": { "$ref": "#/definitions/prop:next_sub_page_button_name" },
+        "prev_sub_page_button_name": { "$ref": "#/definitions/prop:prev_sub_page_button_name" },
+        //// Label Cycler
+        "text_labels": { "$ref": "#/definitions/prop:text_labels" },
+        //// Image Cycler
+        "images": { "$ref": "#/definitions/prop:images" }
       },
       "patternProperties": {
         "\\$[a-zA-Z0-9_]+": {
@@ -407,7 +420,7 @@
             "type": "object",
             "additionalProperties": false,
             "patternProperties": {
-              "^\\$?[a-z0-9:\\-_]+(@((\\$[a-z0-9:\\-_]+)|(([a-z0-9:\\-_]+\\.)?[a-z0-9:\\-_]+)))?$": {
+              "^\\$?[a-zA-Z0-9:\\-_]+(@((\\$[a-zA-Z0-9:\\-_]+)|(([a-zA-Z0-9:\\-_]+\\.)?[a-zA-Z0-9:\\-_]+)))?$": {
                 "$ref": "#/definitions/ui_control"
               }
             }
@@ -2362,6 +2375,19 @@
       "type": "string",
       "examples": ["indent"]
     },
+    // Grid Page Indicator
+    "prop:grid_item_when_current": {
+      "markdownDescription": "**Type**: ```Grid Page Indicator```",
+      "type": "string"
+    },
+    "prop:grid_item_when_not_current": {
+      "markdownDescription": "**Type**: ```Grid Page Indicator```",
+      "type": "string"
+    },
+    "prop:cycler_manager_size_control_target": {
+      "markdownDescription": "**Type**: ```Grid Page Indicator```",
+      "type": "string"
+    },
     // Tab (Legacy)
     "prop:tab_index": {
       "markdownDescription": "**Type**: ```Tab (Legacy)```",
@@ -2641,6 +2667,14 @@
     "prop:jump_to_bottom_on_update": {
       "markdownDescription": "**Type**: ```Scroll View```\t\n\t\nJump to the bottom when the scrolling panel has an update. For example, adds more children to it.\t\n\t\n**Default**: ```false```",
       "default": false,
+      "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:allow_scroll_even_when_content_fits": {
+      "markdownDescription": "**Type**: ```Scroll View```",
+      "default": true,
       "oneOf": [
         { "type": "boolean" },
         { "$ref": "#/definitions/vl:variable" }
@@ -3525,6 +3559,56 @@
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
+    // Cycler
+    "prop:target_cycler_to_compare": {
+      "markdownDescription": "**Type**: ```Label Cycler/Image Cycler```",
+      "default": "",
+      "type": "string"
+    },
+    "prop:next_sub_page_button_name": {
+      "markdownDescription": "**Type**: ```Label Cycler/Image Cycler```",
+      "default": "",
+      "type": "string"
+    },
+    "prop:prev_sub_page_button_name": {
+      "markdownDescription": "**Type**: ```Label Cycler/Image Cycler```",
+      "default": "",
+      "type": "string"
+    },
+    //// Label Cycler
+    "prop:text_labels": {
+      "markdownDescription": "**Type**: ```Label Cycler```",
+      "oneOf": [
+        { "$ref": "#/definitions/vl:variable" },
+        {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    //// Image Cycler
+    "prop:images": {
+      "markdownDescription": "**Type**: ```Image Cycler```",
+      "oneOf": [
+        { "$ref": "#/definitions/vl:variable" },
+        {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "texture_path": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
     "vl:variable": {
       "type": "string",
       "pattern": "^((\\$|#)[a-zA-Z0-9_.]+|\\(.*\\))$"
@@ -3554,6 +3638,9 @@
         "slider_box",
         "scrollbar_box",
         "scroll_track",
+        "grid_page_indicator",
+        "image_cycler",
+        "label_cycler",
         // Legacy
         "tab",
         "carousel_label",
@@ -3723,7 +3810,8 @@
         "offset",
         "size",
         "uv",
-        "wait"
+        "wait",
+        "aseprite_flip_book"
       ]
     },
     "vl:renderer": {
@@ -3765,6 +3853,7 @@
         "progress_bar_renderer",
         "debug_overlay_renderer",
         "background_renderer",
+        "bundle_renderer",
         // Chemistry
         "bohr_model_renderer",
         // 0.16
@@ -3820,6 +3909,7 @@
     },
     "vl:scope": {
       "enum": [
+        "global",
         "view",
         "controller"
       ]
@@ -8557,7 +8647,7 @@
     }
   },
   "patternProperties": {
-    "^[a-z0-9:\\-_]+(@([a-z0-9:\\-_]+\\.)?[a-z0-9:\\-_]+)?$": {
+    "^[a-zA-Z0-9:\\-_]+(@([a-zA-Z0-9:\\-_]+\\.)?[a-zA-Z0-9:\\-_]+)?$": {
       "$ref": "#/definitions/ui_control"
     }
   }
