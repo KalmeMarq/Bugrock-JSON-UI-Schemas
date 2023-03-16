@@ -352,6 +352,8 @@
         // Custom - Name Tag Renderer
         "text_color": { "$ref": "#/definitions/prop:text_color" },
         "background_color": { "$ref": "#/definitions/prop:background_color" },
+        // Custom - Hover Text Renderer
+        "hover_text_max_width": { "$ref": "#/definitions/prop:hover_text_max_width" },
         // Debug Renderer
         "debug": { "$ref": "#/definitions/prop:debug" },
         // Cycler
@@ -3585,6 +3587,14 @@
       "default": [],
       "oneOf": [
         { "$ref": "#/definitions/vl:color" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    // Hover Text Renderer
+    "prop:hover_text_max_width": {
+      "markdownDescription": "**Type**: ```Custom (Hover Text Renderer)```",
+      "oneOf": [
+        { "type": "number", "minimum": 0 },
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
