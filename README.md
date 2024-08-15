@@ -28,37 +28,271 @@ VSCode Settings Example
 ]
 ```
 
+## Screens
+
+| Name                                           | Version       |
+| ---------------------------------------------- | ------------- |
+| inventory_screen                               | >=0.12        |
+| start_screen                                   | >=0.12        |
+| play_screen                                    | >=0.12        |
+| pause_screen_trial                             | >=0.12 <0.16  |
+| trial_upsell_screen                            | >=0.12        |
+| xbl_login_screen                               | >=0.12        |
+| anvil_screen                                   | >=0.13        |
+| chest_screen                                   | >=0.13        |
+| furnace_screen                                 | >=0.13        |
+| gamepad_layout_screen                          | >=0.13        |
+| language_choice_screen                         | >=0.13 <0.16  |
+| test_anims_screen                              | >=0.13        |
+| brewing_stand_screen                           | >=0.14        |
+| debug_screen                                   | >=0.14        |
+| disconnect_screen                              | >=0.14        |
+| enchanting_screen                              | >=0.14        |
+| holographic_postrender_screen                  | >=0.14        |
+| hud_screen                                     | >=0.14        |
+| invite_screen                                  | >=0.14 <0.16  |
+| modal_screen                                   | >=0.14        |
+| pocket_redstone                                | >=0.14 <0.16  |
+| portfolio_screen                               | >=0.14        |
+| progress_screen                                | >=0.14        |
+| redstone_screen                                | >=0.14        |
+| ui_holo_cursor                                 | >=0.14        |
+| vr_alignscreen                                 | >=0.14        |
+| vr_scheme_screen                               | >=0.14        |
+| achievement_screen                             | >=0.15        |
+| realms_create                                  | >=0.15        |
+| realms_invitation                              | >=0.15 <0.16  |
+| realms_invitation_shell                        | >=0.15 <0.16  |
+| realms_pending_invitations                     | >=0.15        |
+| realms_settings_screen                         | >=0.15        |
+| resource_packs_screen                          | >=0.15        |
+| resource_pack_purchase_screen                  | >=0.15 <=1.4  |
+| skin_pack_purchase_screen                      | >=0.15        |
+| skin_picker_screen                             | >=0.15        |
+| store_screen                                   | >=0.15 <=1.0  |
+| survey_screen                                  | >=0.15        |
+| toast_screen                                   | >=0.15        |
+| xbl_first_launch                               | >=0.15 <=1.19 |
+| xbl_failed                                     | >=0.15 <=1.0  |
+| xbl_optional_signin                            | >=0.15        |
+| horse_screen                                   | >=0.15        |
+| horse_screen_pocket                            | >=0.15        |
+| add_external_server_screen                     | >=0.16        |
+| anvil_screen_pocket                            | >=0.16        |
+| authentication_screen                          | >=0.16        |
+| beacon_screen                                  | >=0.16        |
+| beacon_screen_pocket                           | >=0.16        |
+| brewing_stand_screen_pocket                    | >=0.16        |
+| chalkboard_screen                              | >=0.16        |
+| chat_screen                                    | >=0.16        |
+| death_screen                                   | >=0.16        |
+| enchanting_screen_pocket                       | >=0.16        |
+| file_upload_screen                             | >=0.16        |
+| furnace_screen_pocket                          | >=0.16        |
+| horse_screen                                   | >=0.16        |
+| horse_screen_pocket                            | >=0.16        |
+| in_bed_screen                                  | >=0.16        |
+| local_world_picker_screen                      | >=0.16        |
+| npc_interact_screen                            | >=0.16        |
+| pause_screen                                   | >=0.16        |
+| pocket_containers                              | >=0.16        |
+| realms_whitelist (realms_allowlist >=1.16)     | >=0.16 <=1.15 |
+| settings_screen                                | >=0.16        |
+| create_world_upsell_screen                     | >=1.0         |
+| credits_screen                                 | >=1.0         |
+| global_pause_screen                            | >=1.0         |
+| manifest_validation_screen                     | >=1.0         |
+| mashup_screen                                  | >=1.0 <=1.11  |
+| mashup_home_screen                             | >=1.0 <=1.11  |
+| mashup_panorama_screen                         | 1.0           |
+| patch_notes_screen                             | >=1.0         |
+| structure_editor_screen                        | >=1.0         |
+| ugc_viewer_screen                              | >=1.0         |
+| world_templates_screen                         | >=1.0         |
+| coin_purchase_screen                           | >=1.1         |
+| command_block_screen                           | >=1.1         |
+| convert_purchases_to_xbl_screen                | >=1.1         |
+| mashup_home_screen                             | >=1.1         |
+| mob_effect_screen                              | >=1.1         |
+| realms_purchase_info_screen                    | >=1.1 <=1.11  |
+| remix_preview_screen                           | >=1.1 <=1.7   |
+| safe_zone_screen                               | >=1.1         |
+| sign_screen                                    | >=1.1         |
+| storage_management                             | >=1.1         |
+| store_home_screen                              | >=1.1 <=1.6   |
+| store_item_list_screen                         | >=1.1         |
+| trade_screen                                   | >=1.1         |
+| trade_screen_pocket                            | >=1.1         |
+| third_party_store_screen                       | >=1.1         |
+| world_panorama_screen (panorama_screen >=1.16) | >=1.1 <=1.15  |
+| auto_save_info_screen                          | >=1.2         |
+| book_screen                                    | >=1.2         |
+| comment_screen                                 | >=1.2         |
+| feed_screen                                    | >=1.2         |
+| how_to_play_screen                             | >=1.2         |
+| host_options_screen                            | >=1.2         |
+| late_join_pregame_screen                       | >=1.2         |
+| inventory_screen_pocket                        | >=1.2         |
+| manage_feed_screen                             | >=1.2         |
+| non_xbl_user_management_screen                 | >=1.2         |
+| permissions_screen                             | >=1.2         |
+| post_rating_screen                             | >=1.2         |
+| screenshot_screen                              | >=1.2         |
+| screenshot_picker_screen                       | >=1.2         |
+| server_form                                    | >=1.2         |
+| server_item_purchase_screen                    | >=1.2 <=1.4   |
+| world_conversion_error_report_screen           | >=1.2         |
+| xbl_console_signin                             | >=1.2         |
+| xbl_console_signin_succeeded                   | >=1.2         |
+| xbl_friend_finder                              | >=1.2         |
+| xbl_profile_card (profile_card >=1.13)         | >=1.2 <=1.12  |
+| xbl_report_user                                | >=1.2 <=1.18  |
+| adhoc_inprogess_screen                         | >=1.4         |
+| adhoc_screen                                   | >=1.4         |
+| hdr_calibration_screen                         | >=1.4         |
+| item_detail_description_screen                 | >=1.4         |
+| pack_settings_screen                           | >=1.4         |
+| simple_inprogress_screen                       | >=1.4         |
+| store_filter_menu_screen                       | >=1.4         |
+| store_search_screen                            | >=1.4         |
+| store_sort_menu_screen                         | >=1.4         |
+| store_inventory_screen                         | >=1.5         |
+| store_sales_item_list_screen                   | >=1.5         |
+| chat_settings_menu_screen                      | >=1.6         |
+| tabbed_upsell_screen                           | >=1.6         |
+| code_screen                                    | >=1.7 <=1.14  |
+| store_data_driven_screen                       | >=1.7         |
+| sync_iaps_to_xbl_screen                        | >=1.7         |
+| expanded_skin_pack_screen                      | >=1.8         |
+| library_item_screen                            | >=1.8 <=1.14  |
+| library_modal_screen                           | >=1.8         |
+| library_screen                                 | >=1.8 <=1.14  |
+| braze_screen                                   | >=1.9 <=1.19  |
+| game_tip_screen                                | >=1.9         |
+| bundle_purchase_warning_screen                 | >=1.10        |
+| loom_screen                                    | >=1.10        |
+| loom_screen_pocket                             | >=1.10        |
+| win10_trial_conversion_screen                  | >=1.10        |
+| blast_furnace_screen                           | >=1.11        |
+| cartography_screen                             | >=1.11        |
+| cartography_screen_pocket                      | >=1.11        |
+| grindstone_screen                              | >=1.11        |
+| grindstone_screen_pocket                       | >=1.11        |
+| perf_turtle                                    | 1.11 >=1.13   |
+| smoker_screen                                  | >=1.11        |
+| stonecutter_screen                             | >=1.11        |
+| stonecutter_screen_pocket                      | >=1.11        |
+| trade_2_screen                                 | >=1.11        |
+| trade_2_screen_pocket                          | >=1.11        |
+| update_version                                 | >=1.11        |
+| authentication_modals                          | >=1.12        |
+| choose_realm_screen                            | >=1.12        |
+| content_log_history_screen                     | >=1.12        |
+| course_screen                                  | >=1.12 <=1.14 |
+| pdp_screen                                     | >=1.12        |
+| pdp_screenshots_section                        | >=1.12 <=1.16 |
+| account_transfer_error_screen                  | >=1.13        |
+| custom_templates_screen                        | >=1.13        |
+| world_conversion_complete_screen               | >=1.13        |
+| day_one_experience_intro_screen                | >=1.13        |
+| day_one_experience_screen                      | >=1.13        |
+| edu_play_screen                                | >=1.13 <=1.14 |
+| edu_pause_screen                               | >=1.13 <=1.14 |
+| edu_world_templates_screen                     | >=1.13 <=1.14 |
+| edu_worlds_screen                              | >=1.13 <=1.14 |
+| ip_join_screen                                 | >=1.13 <=1.14 |
+| immersive_reader                               | >=1.13        |
+| joincode_entry_screen                          | >=1.13 <=1.14 |
+| lesson_quiz_screen                             | >=1.13 <=1.14 |
+| multiplayer_lesson_screen                      | >=1.13 <=1.14 |
+| realms_plus_ended_screen                       | >=1.13        |
+| persona_screen                                 | >=1.13        |
+| edu_permissions_screen                         | >=1.13 <=1.14 |
+| profile_screen                                 | >=1.13        |
+| realmsplus_upgrade_notice_screen               | >=1.13        |
+| token_faq_screen                               | >=1.13        |
+| profile_card                                   | >=1.13        |
+| confirm_msa_unlink_screen                      | >=1.14        |
+| gamepad_disconnected                           | >=1.14        |
+| edu_discovery_dialog                           | >=1.15        |
+| emote_wheel_screen                             | >=1.15        |
+| account_banned_screen                          | >=1.16 <=1.18 |
+| smithing_table_screen                          | >=1.16        |
+| smithing_table_screen_pocket                   | >=1.16        |
+| jigsaw_editor_screen                           | >=1.16        |
+| online_safety_screen                           | >=1.16        |
+| panorama_screen                                | >=1.16        |
+| realms_allowlist                               | >=1.16        |
+| store_gift_promotion_screen                    | >=1.16 <=1.20 |
+| cloud_upload_screen                            | >=1.17        |
+| realms_slots_screen                            | >=1.17        |
+| toolbox_mode_screen                            | >=1.17 <=1.18 |
+| storage_migration_generic_screen               | >=1.18        |
+| update_dimensions                              | >=1.18        |
+| world_recovery_screen                          | >=1.18        |
+| xbl_immediate_signin                           | >=1.18        |
+| smithing_table_2_screen                        | >=1.19        |
+| smithing_table_2_screen_pocket                 | >=1.19        |
+| confirm_delete_account_screen                  | >=1.19        |
+| display_logged_error_screen                    | >=1.19        |
+| gathering_info_screen                          | >=1.19        |
+| notificationcenter_screen                      | 1.19          |
+| persona_cast_character_screen                  | >=1.19        |
+| thanks_for_testing_screen                      | >=1.19        |
+| store_promo_timeline_screen                    | >=1.19        |
+| submit_feedback_screen                         | >=1.19        |
+| xbl_console_qr_signin                          | >=1.19        |
+| encyclopedia_screen                            | >=1.20        |
+| realmsPlus_purchase_warning_screen             | >=1.20        |
+| csb_purchase_error_screen                      | >=1.20        |
+| csb_screen                                     | >=1.20        |
+| csb_buy_now_screen                             | >=1.20        |
+| csb_purchase_amazondevicewarning_screen        | >=1.20        |
+| csb_purchase_warning_screen                    | >=1.20        |
+| csb_view_packs_screen                          | >=1.20        |
+| csb_welcome_screen                             | >=1.20        |
+| persona_sdl                                    | >=1.20        |
+| crafter_screen_pocket                          | >=1.21        |
+
+## Features
+
+| Feature           | Version |
+| ----------------- | ------- |
+| Variables         | >=0.14  |
+| _global_variables | >=1.2   |
+
+
 ## UI Element Types
 
-| Name                      | Version | Allowed Properties                                                                                                                                                       |
-| ------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ```panel```               | >=0.12  | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
-| ```stack_panel```         |         | [Stack Panel](#stack-panel), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                   |
-| ```image```               | >=0.12  | [Sprite](#sprite), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                             |
-| ```label```               | >=0.12  | [Text](#text), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                 |
-| ```input_panel```         |         | [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                             |
-| ```grid```                |         | [Grid](#grid), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                 |
-| ```button```              | >=0.12  | [Button](#button), [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                          |
-| ```toggle```              |         | [Toggle](#toggle), [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                          |
-| ```slider```              |         | [Slider](#slider), [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                          |
-| ```slider_box```          |         | [Slider Box](#slider-box), [Input](#input), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                    |
-| ```screen```              | >=0.12  | [Screen](#screen), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                            |
-| ```dropdown```            |         | [Dropdown](#dropdown), [Toggle](#toggle), [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)   |
-| ```edit_box```            |         | [Text Edit](#text-edit), [Input](#input), [Focus](#focus), [Sound](#sound), [Button](#button), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding) |
-| ```custom```              | >=0.12  | [Custom](#custom), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                             |
-| ```scroll_view```         |         | [Scroll View](#scroll-view), [Input](#input), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                  |
-| ```scroll_box```          |         | [Input](#input), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                               |
-| ```scroll_track```        |         | [Input](#input), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                               |
-| ```factory```             |         | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
-| ```selection_wheel```     |         | [Selection Wheel](#selection-wheel), [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)        |
-| ```grid_page_indicator``` |         | [Grid Page Indicator](#grid-page-indicator), [Grid](#grid), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                    |
-| ```label_cycler```        |         | [Label Cycler](#label-cycler), [Cycler](#cycler), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                              |
-| ```image_cycler```        |         | [Image Cycler](#image-cycler), [Cycler](#cycler), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                              |
-| ```collection_panel```    |         | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
-| ```tab```                 |         | [Tab](#tab-unusedno-longer-works), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                             |
-| ```carousel_label```      | Never?  | [Carousel Label](#carousel-label-unusedno-longer-works), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                       |
-| ```grid_item```           | <=0.15  | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
-| ```scrollbar```           |         | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
+| Name                      | Version       | Allowed Properties                                                                                                                                                       |
+| ------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ```panel```               | >=0.12        | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
+| ```input_panel```         | >=0.12        | [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                             |
+| ```image```               | >=0.12        | [Sprite](#sprite), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                             |
+| ```grid```                | >=0.12        | [Grid](#grid), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                 |
+| ```grid_item```           | >=0.12 <=0.14 | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
+| ```label```               | >=0.12        | [Text](#text), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                 |
+| ```button```              | >=0.12        | [Button](#button), [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                          |
+| ```screen```              | >=0.12        | [Screen](#screen), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                            |
+| ```tab```                 | >=0.12 <=0.16 | [Tab](#tab-unusedno-longer-works), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                             |
+| ```scrollbar```           | >=0.12 <=0.14 | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
+| ```scroll_box```          | >=0.12        | [Input](#input), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                               |
+| ```stack_panel```         | >=0.15        | [Stack Panel](#stack-panel), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                   |
+| ```toggle```              | >=0.14        | [Toggle](#toggle), [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                          |
+| ```slider```              | >=0.15        | [Slider](#slider), [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                          |
+| ```slider_box```          | >=0.15        | [Slider Box](#slider-box), [Input](#input), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                    |
+| ```dropdown```            | >=0.16        | [Dropdown](#dropdown), [Toggle](#toggle), [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)   |
+| ```edit_box```            | >=0.13        | [Text Edit](#text-edit), [Input](#input), [Focus](#focus), [Sound](#sound), [Button](#button), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding) |
+| ```custom```              | >=0.12        | [Custom](#custom), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                             |
+| ```scroll_view```         | >=0.15        | [Scroll View](#scroll-view), [Input](#input), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                  |
+| ```scroll_track```        | >=0.15        | [Input](#input), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                               |
+| ```factory```             | >=0.14        | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
+| ```selection_wheel```     | >=1.15        | [Selection Wheel](#selection-wheel), [Input](#input), [Focus](#focus), [Sound](#sound), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)        |
+| ```grid_page_indicator``` | >=1.19        | [Grid Page Indicator](#grid-page-indicator), [Grid](#grid), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                    |
+| ```label_cycler```        | >=1.19        | [Label Cycler](#label-cycler), [Cycler](#cycler), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                              |
+| ```image_cycler```        | >=1.19        | [Image Cycler](#image-cycler), [Cycler](#cycler), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                              |
+| ```collection_panel```    | >=1.19        | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
+| ```carousel_label```      | >=0.14? <=?   | [Carousel Label](#carousel-label-unusedno-longer-works), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                       |
 
 ## Properties
 
@@ -66,29 +300,29 @@ VSCode Settings Example
 
 | Name                            | Version | Type                                                                                                   |
 | ------------------------------- | ------- | ------------------------------------------------------------------------------------------------------ |
-| ```controls```                  |         | array of UI elements                                                                                   |
-| ```variables```                 |         | object or array of objects                                                                             |
-| ```visible```                   |         | boolean                                                                                                |
+| ```controls```                  | >=0.12  | array of UI elements                                                                                   |
+| ```variables```                 | >=0.14  | object or array of objects                                                                             |
+| ```visible```                   | >=0.12  | boolean                                                                                                |
 | ```ignored```                   |         | boolean                                                                                                |
 | ```modifications```             |         | array of modifications                                                                                 |
 | ```anims```                     |         | array of strings                                                                                       |
 | ```disable_anim_fast_forward``` |         | boolean                                                                                                |
 | ```animation_reset_name```      |         | string                                                                                                 |
 | ```visible```                   |         | boolean                                                                                                |
-| ```enabled```                   |         | boolean                                                                                                |
+| ```enabled```                   | >=0.13   | boolean                                                                                                |
 | ```layer```                     | >=0.13  | integer                                                                                                |
 | ```z_order```                   | 0.12    | integer                                                                                                |
-| ```alpha```                     |         | float (>=0.0 and <= 1.0)                                                                               |
+| ```alpha```                     | >=0.12  | float (>=0.0 and <= 1.0)                                                                               |
 | ```propagate_alpha```           |         | boolean                                                                                                |
-| ```clips_children```            |         | boolean                                                                                                |
-| ```allow_clipping```            |         | boolean                                                                                                |
-| ```clip_offset```               |         | Vector [x, y]                                                                                          |
+| ```clips_children```            | >=0.12  | boolean                                                                                                |
+| ```allow_clipping```            | >=0.13  | boolean                                                                                                |
+| ```clip_offset```               | >=0.13  | Vector [x, y]                                                                                          |
 | ```clip_state_change_event```   |         | string                                                                                                 |
 | ```enabled_scissor_test```      |         | boolean                                                                                                |
 | ```property_bag```              | >=0.12  | object                                                                                                 |
 | ```selected```                  |         | boolean                                                                                                |
 | ```use_child_anchors```         |         | boolean                                                                                                |
-| ```grid_position```             |         | Vector [column, row]                                                                                   |
+| ```grid_position```             | >=0.12  | Vector [column, row]                                                                                   |
 | ```debug```                     |         | ```white```, ```black```, ```gray```, ```red```, ```blue```, ```green```, ```yellow``` or ```purple``` |
 
 ### Layout
@@ -97,69 +331,69 @@ VSCode Settings Example
 | -------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ```anchor_from```                | >=0.12  | <table><thead><tr><th>Value</th><th>Version</th></tr></thead><tbody><tr><td>top_left</td><td>>=0.12</td></tr><tr><td>top_middle</td><td>>=0.12</td></tr><tr><td>top_right</td><td>>=0.12</td></tr><tr><td>left_middle</td><td>>=0.12</td></tr><tr><td>center</td><td>>=0.12</td></tr><tr><td>right_middle</td><td>>=0.12</td></tr><tr><td>bottom_left</td><td>>=0.12</td></tr><tr><td>bottom_middle</td><td>>=0.12</td></tr><tr><td>bottom_right</td><td>>=0.12</td></tr></tbody><caption>Enum</caption></table> |
 | ```anchor_to```                  | >=0.12  | <table><thead><tr><th>Value</th><th>Version</th></tr></thead><tbody><tr><td>top_left</td><td>>=0.12</td></tr><tr><td>top_middle</td><td>>=0.12</td></tr><tr><td>top_right</td><td>>=0.12</td></tr><tr><td>left_middle</td><td>>=0.12</td></tr><tr><td>center</td><td>>=0.12</td></tr><tr><td>right_middle</td><td>>=0.12</td></tr><tr><td>bottom_left</td><td>>=0.12</td></tr><tr><td>bottom_middle</td><td>>=0.12</td></tr><tr><td>bottom_right</td><td>>=0.12</td></tr></tbody><caption>Enum</caption></table> |
-| ```contained```                  |         | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ```draggable```                  |         | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ```follows_cursor```             |         | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ```contained```                  | >=0.12  | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ```draggable```                  | >=0.12  | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ```follows_cursor```             | >=0.12  | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ```offset```                     | >=0.12  | Vector [x, y]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ```size```                       | >=0.12  | Vector [width, height]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ```max_size```                   |         | Vector [width, height]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ```min_size```                   |         | Vector [width, height]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ```inherit_max_sibling_width```  |         | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ```inherit_max_sibling_height``` |         | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ```use_anchored_offset```        |         | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ```max_size```                   | >=0.16  | Vector [width, height]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ```min_size```                   | >=0.16  | Vector [width, height]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ```inherit_max_sibling_width```  | >=1.2   | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ```inherit_max_sibling_height``` | >=1.2   | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ```use_anchored_offset```        | >=1.1   | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 ### Data Binding
 
-| Name                          | Version | Type                                 |
-| ----------------------------- | ------- | ------------------------------------ |
-| ```bindings```                | >=0.12  | array of [BindingItem](#bindingitem) |
-| ```binding_collection_name``` |         | string                               |
+| Name                          | Version    | Type                                 |
+| ----------------------------- | ---------- | ------------------------------------ |
+| ```bindings```                | >=0.12     | array of [BindingItem](#bindingitem) |
+| ```binding_collection_name``` | >=0.12 <=? | string                               |
 
 #### BindingItem
 
 | Name                            | Version | Type                                                                                           |
 | ------------------------------- | ------- | ---------------------------------------------------------------------------------------------- |
 | ```ignored```                   |         | boolean                                                                                        |
-| ```binding_type```              |         | ```global```, ```collection```, ```collection_details``` or ```view```                         |
-| ```binding_name```              |         | string                                                                                         |
-| ```binding_name_override```     |         | string                                                                                         |
-| ```binding_collection_name```   |         | string                                                                                         |
-| ```binding_collection_prefix``` |         | string                                                                                         |
-| ```binding_condition```         |         | ```always```, ```visible```, ```once```, ```always_when_visible``` or ```visibility_changed``` |
-| ```source_control_name```       |         | string                                                                                         |
-| ```source_property_name```      |         | string                                                                                         |
-| ```target_property_name```      |         | string                                                                                         |
-| ```resolve_sibling_scope```     |         | boolean                                                                                        |
+| ```binding_type```              | >=0.12  | ```global```, ```collection```, ```collection_details``` or ```view```                         |
+| ```binding_name```              | >=0.12  | string                                                                                         |
+| ```binding_name_override```     | >=0.12  | string                                                                                         |
+| ```binding_collection_name```   | >=0.13  | string                                                                                         |
+| ```binding_collection_prefix``` | >=0.15  | string                                                                                         |
+| ```binding_condition```         | >=0.14  | ```always```, ```visible```, ```once```, ```always_when_visible``` or ```visibility_changed``` |
+| ```source_control_name```       | >=0.15  | string                                                                                         |
+| ```source_property_name```      | >=0.15  | string                                                                                         |
+| ```target_property_name```      | >=0.15  | string                                                                                         |
+| ```resolve_sibling_scope```     | >=1.1   | boolean                                                                                        |
 
 ### Stack Panel
 
 | Name              | Version | Type                                                                                                                                                         |
 | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ```orientation``` |         | <table><thead><tr><th>Value</th><th>Version</th></tr></thead><tbody><tr><td>vertical</td><td></td></tr><tr><td>horizontal</td><td></td></tr></tbody></table> |
+| ```orientation``` | >=0.15  | <table><thead><tr><th>Value</th><th>Version</th></tr></thead><tbody><tr><td>vertical</td><td></td></tr><tr><td>horizontal</td><td></td></tr></tbody></table> |
 
 ### Text
 
-| Name                          | Version | Type                                                                                                                                                                                 |
-| ----------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ```text```                    | >=0.12  | string                                                                                                                                                                               |
-| ```color```                   | >=0.12  | Vector [red, green, blue] or ```white```, ```black```, ```yellow```, ```orange```, ```green```, ```purple```, ```nil```, ```cyan```, ```red```, ```grey```, ```gray``` or ```blue``` |
-| ```locked_color```            |         | Vector [red, green, blue] or ```white```, ```black```, ```yellow```, ```orange```, ```green```, ```purple```, ```nil```, ```cyan```, ```red```, ```grey```, ```gray``` or ```blue``` |
-| ```shadow```                  | >=0.12  | boolean                                                                                                                                                                              |
-| ```font_size```               |         | ```small```, ```normal```, ```large``` or ```extra_large```                                                                                                                          |
-| ```font_scale_factor```       |         | float (0 >=)                                                                                                                                                                         |
-| ```localize```                |         | boolean                                                                                                                                                                              |
-| ```line_padding```            |         | number                                                                                                                                                                               |
-| ```font_type```               |         | string                                                                                                                                                                               |
-| ```backup_font_type```        |         | string                                                                                                                                                                               |
-| ```text_alignment```          |         | ```left```,```center``` and ```right```                                                                                                                                              |
-| ```hide_hypen```              |         | boolean                                                                                                                                                                              |
-| ```locked_alpha```            |         | float (0.0 >= and <= 1.0)                                                                                                                                                            |
-| ```enable_profanity_filter``` |         | boolean                                                                                                                                                                              |
-| ```notify_on_ellipses```      |         | array of strings                                                                                                                                                                     |
-| ```alignment```               |         | ```left```,```center``` or ```right```                                                                                                                                               |
-| ```use_place_holder```        |         | boolean                                                                                                                                                                              |
-| ```place_holder_text```       |         | string                                                                                                                                                                               |
-| ```place_holder_text_color``` |         | Vector [red, green, blue] or ```white```, ```black```, ```yellow```, ```orange```, ```green```, ```purple```, ```nil```, ```cyan```, ```red```, ```grey```, ```gray``` or ```blue``` |
+| Name                          | Version        | Type                                                                                                                                                                                 |
+| ----------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ```text```                    | >=0.12         | string                                                                                                                                                                               |
+| ```color```                   | >=0.12         | Vector [red, green, blue] or ```white```, ```black```, ```yellow```, ```orange```, ```green```, ```purple```, ```nil```, ```cyan```, ```red```, ```grey```, ```gray``` or ```blue``` |
+| ```locked_color```            | >=0.16         | Vector [red, green, blue] or ```white```, ```black```, ```yellow```, ```orange```, ```green```, ```purple```, ```nil```, ```cyan```, ```red```, ```grey```, ```gray``` or ```blue``` |
+| ```shadow```                  | >=0.12         | boolean                                                                                                                                                                              |
+| ```font_size```               | >=0.12         | ```small```, ```normal```, ```large``` or ```extra_large```                                                                                                                          |
+| ```font_scale_factor```       | >=1.11         | float (0 >=)                                                                                                                                                                         |
+| ```localize```                | >=0.13         | boolean                                                                                                                                                                              |
+| ```line_padding```            | >=1.11         | number                                                                                                                                                                               |
+| ```font_type```               | >=0.14         | string                                                                                                                                                                               |
+| ```backup_font_type```        | >=1.13         | string                                                                                                                                                                               |
+| ```text_alignment```          | >=1.1          | ```left```,```center``` and ```right```                                                                                                                                              |
+| ```hide_hypen```              | >=1.11         | boolean                                                                                                                                                                              |
+| ```locked_alpha```            | >=0.16         | float (0.0 >= and <= 1.0)                                                                                                                                                            |
+| ```enable_profanity_filter``` | >=1.11         | boolean                                                                                                                                                                              |
+| ```notify_on_ellipses```      | >=1.11         | array of strings                                                                                                                                                                     |
+| ```alignment```               | >=0.12 <=1.0   | ```left```,```center``` or ```right```                                                                                                                                               |
+| ```use_place_holder```        | >=0.14 <= 0.16 | boolean                                                                                                                                                                              |
+| ```place_holder_text```       | >=0.14 <= 0.16 | string                                                                                                                                                                               |
+| ```place_holder_text_color``` | >=0.14 <= 0.16 | Vector [red, green, blue] or ```white```, ```black```, ```yellow```, ```orange```, ```green```, ```purple```, ```nil```, ```cyan```, ```red```, ```grey```, ```gray``` or ```blue``` |
 
 ### Sprite
 
@@ -169,28 +403,23 @@ VSCode Settings Example
 | ```uv```                          | >=0.12  | Vector [u, v]                                                                                                                                                                      |
 | ```uv_size```                     | >=0.12  | Vector [width, height]                                                                                                                                                             |
 | ```nineslice_size```              | >=0.12  | integer, Vector [x, y] or Vector [x0, y0, x1, y1]                                                                                                                                  |
-| ```base_size```                   |         | Vector [width, height]                                                                                                                                                             |
-| ```color```                       |         | Vector [red, green, blue] or ```white```, ```black```, ```yellow```, ```orange```, ```green```, ```purple```, ```nil```, ```cyan```, ```red```, ```grey```, ```gray```, ```blue``` |
-| ```tiled```                       |         | boolean, ```x```,  ```y```, ```xy``` or ```yx```                                                                                                                                   |
-| ```tiled_scale```                 |         | Vector [x, y]                                                                                                                                                                      |
-| ```clip_direction```              |         | ```left```, ```right```, ```up```, ```down``` or ```center```                                                                                                                      |
-| ```clip_ratio```                  |         | float (0.0 >= and <= 1.0)                                                                                                                                                          |
-| ```clip_pixelperfect```           |         | boolean                                                                                                                                                                            |
-| ```keep_ratio```                  |         | boolean                                                                                                                                                                            |
-| ```bilinear```                    |         | boolean                                                                                                                                                                            |
-| ```fill```                        |         | boolean                                                                                                                                                                            |
-| ```grayscale```                   |         | boolean                                                                                                                                                                            |
-| ```force_texture_reload```        |         | boolean                                                                                                                                                                            |
-| ```$fit_to_witdh```               |         | boolean                                                                                                                                                                            |
-| ```zip_folder```                  |         | string                                                                                                                                                                             |
-| ```texture_file_system```         |         | ```RawPath``` or ```InAppPackage```                                                                                                                                                |
-| ```allow_debug_missing_texture``` |         | boolean                                                                                                                                                                            |
-
-#### Unused/No Longer Works
-
-| Name                | Type    |
-| ------------------- | ------- |
-| ```pixel_perfect``` | boolean |
+| ```base_size```                   | >=1.2   | Vector [width, height]                                                                                                                                                             |
+| ```color```                       | >=0.13  | Vector [red, green, blue] or ```white```, ```black```, ```yellow```, ```orange```, ```green```, ```purple```, ```nil```, ```cyan```, ```red```, ```grey```, ```gray```, ```blue``` |
+| ```tiled```                       | >=0.13  | boolean, ```x```,  ```y```, ```xy``` or ```yx```                                                                                                                                   |
+| ```tiled_scale```                 | >=1.0   | Vector [x, y]                                                                                                                                                                      |
+| ```clip_direction```              | >=0.12  | ```left```, ```right```, ```up```, ```down``` or ```center```                                                                                                                      |
+| ```clip_ratio```                  | >=0.12  | float (0.0 >= and <= 1.0)                                                                                                                                                          |
+| ```clip_pixelperfect```           | >=0.15  | boolean                                                                                                                                                                            |
+| ```keep_ratio```                  | >=1.12  | boolean                                                                                                                                                                            |
+| ```bilinear```                    | >=1.11  | boolean                                                                                                                                                                            |
+| ```fill```                        | >=0.16  | boolean                                                                                                                                                                            |
+| ```grayscale```                   | >=0.16  | boolean                                                                                                                                                                            |
+| ```force_texture_reload```        | >=1.1   | boolean                                                                                                                                                                            |
+| ```$fit_to_witdh```               | >=1.11  | boolean                                                                                                                                                                            |
+| ```zip_folder```                  | >=0.15  | string                                                                                                                                                                             |
+| ```texture_file_system```         | >=0.15  | ```RawPath``` or ```InAppPackage```                                                                                                                                                |
+| ```allow_debug_missing_texture``` | >=1.11  | boolean                                                                                                                                                                            |
+| ```pixel_perfect```               | >=1.11  | boolean                                                                                                                                                                            |
 
 ### TTS
 
@@ -246,27 +475,26 @@ VSCode Settings Example
 
 ### Toggle
 
-| Name                                 | Type    |
-| ------------------------------------ | ------- |
-| ```radio_toggle_group```             | boolean |
-| ```toggle_name```                    | string  |
-| ```toggle_default_state```           | boolean |
-| ```toggle_group_forced_index```      | integer |
-| ```toggle_group_default_selected```  | integer |
-| ```reset_on_focus_lost```            | boolean |
-| ```toggle_on_hover```                | string  |
-| ```toggle_on_button```               | string  |
-| ```toggle_off_button```              | string  |
-| ```enable_directional_toggling```    | boolean |
-| ```toggle_grid_collection_name```    | string  |
-| ```checked_control```                | string  |
-| ```unchecked_control```              | string  |
-| ```checked_hover_control```          | string  |
-| ```unchecked_hover_control```        | string  |
-| ```checked_locked_control```         | string  |
-| ```unchecked_locked_control```       | string  |
-| ```checked_locked_hover_control```   | string  |
-| ```unchecked_locked_hover_control``` | string  |
+| Name                                 | Version | Type    |
+| ------------------------------------ | ------- | ------- |
+| ```radio_toggle_group```             | >=0.14  | boolean |
+| ```toggle_name```                    | >=0.14  | string  |
+| ```toggle_default_state```           | >=0.14  | boolean |
+| ```toggle_group_forced_index```      | >=0.14  | integer |
+| ```toggle_group_default_selected```  | >=0.14  | integer |
+| ```reset_on_focus_lost```            | >=1.14  | boolean |
+| ```toggle_on_button```               | >=1.11  | string  |
+| ```toggle_off_button```              | >=1.11  | string  |
+| ```enable_directional_toggling```    | >=1.11  | boolean |
+| ```toggle_grid_collection_name```    | >=0.14  | string  |
+| ```checked_control```                | >=0.14  | string  |
+| ```unchecked_control```              | >=0.14  | string  |
+| ```checked_hover_control```          | >=0.14  | string  |
+| ```unchecked_hover_control```        | >=0.14  | string  |
+| ```checked_locked_control```         | >=0.14  | string  |
+| ```unchecked_locked_control```       | >=0.14  | string  |
+| ```checked_locked_hover_control```   | >=0.16  | string  |
+| ```unchecked_locked_hover_control``` | >=0.16  | string  |
 
 ### Slider
 
@@ -308,11 +536,11 @@ VSCode Settings Example
 
 ### Dropdown
 
-| Name                           | Type   |
-| ------------------------------ | ------ |
-| ```dropdown_name```            | string |
-| ```dropdown_content_control``` | string |
-| ```dropdown_area```            | string |
+| Name                           | Version | Type   |
+| ------------------------------ | ------- | ------ |
+| ```dropdown_name```            | >=0.16  | string |
+| ```dropdown_content_control``` | >=0.16  | string |
+| ```dropdown_area```            | >=0.16  | string |
 
 ### Grid
 

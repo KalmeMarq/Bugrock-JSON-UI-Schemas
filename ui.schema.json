@@ -422,7 +422,7 @@
       ]
     },
     "nm:controls": {
-      "markdownDescription": "**Type**: ```Any```\t\n\t\nChildren of the UI element.",
+      "markdownDescription": "**Type**: ```Any```\t\n\t\nChildren of the UI element.\t\n\t\n**Version**: ```+0.12```",
       "oneOf": [
         {
           "type": "array",
@@ -430,7 +430,7 @@
             "type": "object",
             "additionalProperties": false,
             "patternProperties": {
-              "^\\$?[a-zA-Z0-9:\\-_]+(@((\\$[a-zA-Z0-9:\\-_]+)|(([a-zA-Z0-9:\\-_]+\\.)?[a-zA-Z0-9:\\-_]+)))?$": {
+              "^\\$?[\\w\\u00C0-\\u024F\\u1E00-\\u1EFF:\\-]+(@((\\$[\\w\\u00C0-\\u024F\\u1E00-\\u1EFF:\\-]+)|(([\\w\\u00C0-\\u024F\\u1E00-\\u1EFF:\\-]+\\.)?[\\w\\u00C0-\\u024F\\u1E00-\\u1EFF:\\-]+)))?$": {
                 "$ref": "#/definitions/ui_control"
               }
             }
@@ -440,7 +440,7 @@
       ]
     },
     "nm:variables": {
-      "markdownDescription": "**Type**: ```Any```\t\n\t\nChanges variables values if conditions are met.",
+      "markdownDescription": "**Type**: ```Any```\t\n\t\nChanges variables values if conditions are met.\t\n\t\n**Version**: ```+0.14```",
       "oneOf": [
         {
           "type": "array",
@@ -739,7 +739,7 @@
     },
     // Control
     "prop:visible": {
-      "markdownDescription": "**Type**: ```Any```\t\n\t\nIf the UI element should be visible.\t\n\t\n**Default**: ```true```",
+      "markdownDescription": "**Type**: ```Any```\t\n\t\nIf the UI element should be visible.\t\n\t\n**Default**: ```true```\t\n\t\n**Version**: ```+0.12```",
       "default": true,
       "oneOf": [
         { "type": "boolean" },
@@ -747,7 +747,7 @@
       ]
     },
     "prop:enabled": {
-      "markdownDescription": "**Type**: ```Any```\t\n\t\nIf true and if the UI element or any of its children have the locked state then they will be in the locked.\t\n\t\n**Default**: ```true```",
+      "markdownDescription": "**Type**: ```Any```\t\n\t\nIf true and if the UI element or any of its children have the locked state then they will be in the locked.\t\n\t\n**Default**: ```true```\t\n\t\n**Version**: ```+0.13```",
       "default": true,
       "oneOf": [
         { "type": "boolean" },
@@ -755,7 +755,7 @@
       ]
     },
     "prop:layer": {
-      "markdownDescription": "**Type**: ```Any```\t\n\t\nZ-Index/Layer relative to parent element. Higher layers will render above.\t\n\t\n**Default**: ```0```",
+      "markdownDescription": "**Type**: ```Any```\t\n\t\nZ-Index/Layer relative to parent element. Higher layers will render above.\t\n\t\n**Default**: ```0```\t\n\t\n**Version**: ```+0.13```",
       "default": 0,
       "oneOf": [
         { "type": "integer" },
@@ -771,7 +771,7 @@
       ]
     },
     "prop:alpha": {
-      "markdownDescription": "**Type**: ```Any```\t\n\t\nAlpha/transparency of the element. It will only affect the parent UI element. Its children will be unaffected. If you want the alpha to apply for both the parent and children use ```propagate_alpha```.\t\n\t\n**Default**: ```1.0```",
+      "markdownDescription": "**Type**: ```Any```\t\n\t\nAlpha/transparency of the element. It will only affect the parent UI element. Its children will be unaffected. If you want the alpha to apply for both the parent and children use ```propagate_alpha```.\t\n\t\n**Default**: ```1.0```\t\n\t\n**Version**: ```+0.12```",
       "default": 1.0,
       "oneOf": [
         {
@@ -8969,7 +8969,7 @@
     }
   },
   "patternProperties": {
-    "^[a-zA-Z0-9:\\-_]+(@([a-zA-Z0-9:\\-_]+\\.)?[a-zA-Z0-9:\\-_]+)?$": {
+    "^[\\w\\u00C0-\\u024F\\u1E00-\\u1EFF:\\-]+((@([\\w\\u00C0-\\u024F\\u1E00-\\u1EFF:\\-]+\\.)?[\\w\\u00C0-\\u024F\\u1E00-\\u1EFF:\\-]+)|(\\/[\\w\\u00C0-\\u024F\\u1E00-\\u1EFF:\\-]+){0,})?$": {
       "$ref": "#/definitions/ui_control"
     }
   }
