@@ -350,6 +350,7 @@
         // Custom - Progress Bar Renderer
         "primary_color": { "$ref": "#/definitions/prop:primary_color" },
         "secondary_color": { "$ref": "#/definitions/prop:secondary_color" },
+        "full_storage_color": { "$ref": "#/definitions/prop:full_storage_color" },
         // Custom - Gradient Renderer
         "gradient_direction": { "$ref": "#/definitions/prop:gradient_direction" },
         "color1": { "$ref": "#/definitions/prop:color1" },
@@ -1189,6 +1190,18 @@
                 { "$ref": "#/definitions/vl:variable" }
               ]
             },
+            "#size_binding_x_absolute": {
+              "oneOf": [
+                { "type": "number" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
+            },
+            "#size_binding_y_absolute": {
+                "oneOf": [
+                { "type": "number" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
+            },
             "#is_featured": {
               "type": ["boolean", "string"]
             },
@@ -1410,6 +1423,9 @@
                 { "type": "integer" },
                 { "$ref": "#/definitions/vl:variable" }
               ]
+            },
+            "#category": {
+              "type": "string"
             }
           }
         },
@@ -3596,6 +3612,14 @@
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
+    "prop:full_storage_color": {
+      "markdownDescription": "**Type**: ```Custom (Prograss Bar Renderer)```",
+      "default": [],
+      "oneOf": [
+        { "$ref": "#/definitions/vl:color" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
     // Custom - Gradient Renderer
     "prop:gradient_direction": {
       "markdownDescription": "**Type**: ```Custom (Gradient Renderer)```\t\n\t\nDirection of the gradient.\t\n\t\n**Default**: ```vertical```",
@@ -3969,6 +3993,7 @@
         "editor_gizmo_renderer",
         "dash_renderer",
         "equipment_preview_renderer",
+        "editor_volume_highlight_renderer",
         // Chemistry
         "bohr_model_renderer",
         // 0.16
@@ -5023,6 +5048,16 @@
         "button.featured_category",
         // +1.19
         "button.turn_character_select_doll",
+        "button.scroll_up",
+        "button.scroll_down",
+        "button.scroll_right",
+        "button.scroll_left",
+        "button.turn_right",
+        "button.turn_left",
+        "button.tapped_bundle_item_icon",
+        "button.hide_bundle_tooltip",,
+        "button.tapped_bundle_tooltip",
+        "button.ai_lesson_crafter",
         //
         "button.exit_gift_screen",
         "button.cycle_promotions_left",
@@ -8956,7 +8991,41 @@
         "#day_four_string",
         "#animation_mode_dropdown_enabled",
         "#animation_mode_dropdown_toggle_label",
-        "#toast_font_type"
+        "#toast_font_type",
+
+        "#bundle_selected_item_aux",
+        "#bundle_selected_item_visible",
+        "#bundle_selected_item_charged_item",
+        "#bundle_selected_item_color",
+        "#bundle_selected_armor_trim_material",
+        "#bundle_selected_banner_patterns",
+        "#bundle_shield_base_color_hovered",
+        "#bundle_selected_banner_colors",
+        "#bundle_selected_banner_type",
+        "#bundle_selected_decorated_pot_sherds",
+        "#bundle_open_back",
+        "#bundle_open_front",
+        "#is_selected_bundle_item_slot",
+        "#show_bundle_item_slot",
+        "#more_hidden_items_text",
+        "#is_hidden_items_label",
+        "#bundle_tooltip_size_x",
+        "#bundle_tooltip_size_y",
+        "#show_bundle_tooltip_hover",
+        "#show_bundle_tooltip_hover_southwest",
+        "#show_bundle_tooltip_hover_northwest",
+        "#show_bundle_tooltip_hover_northeast",
+        "#show_bundle_tooltip_hover_southeast",
+        "#show_bundle_tooltip_pocket",
+        "#is_selected_bundle_full",
+        "#bundle_weight_bar_ratio",
+        "#is_selected_bundle_empty",
+        "#bundle_tooltip_grid_dimensions",
+        "#bundle_name",
+        "#bundle_has_selected_item",
+        "#selected_bundle_item_text",
+        "#edu_ai_lesson_crafter_on",
+        "#editions_visible_and_not_realms_promo_visible"
       ]
     }
   },
