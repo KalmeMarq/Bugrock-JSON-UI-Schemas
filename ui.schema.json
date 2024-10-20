@@ -845,260 +845,486 @@
           "properties": {
             // Live Horse Renderer
             "#entity_id": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             // Paper Doll Renderer
             "entity_type": {
-              "enum": [
-                "player",
-                "npc"
+              "oneOf": [
+                {
+                  "enum": [
+                    "player",
+                    "npc"
+                  ]
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#skin_idx": {
               "oneOf": [
-                { "type": "integer" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#player_uuid": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#skin_rotation": {
-               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+              "oneOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#custom_rot_y": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#gesture_delta_source": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#gesture_mouse_delta_x": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#pack_id": {
               "oneOf": [
-                { "type": "integer" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#force_skin_update": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             // Progress Bar Renderer
             "#progress_bar_visible": {
-               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+              "oneOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#progress_bar_total_amount": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#progress_bar_current_amount": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "is_durability": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "round_value": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "drop_shadow": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "round_up": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "is_storage_bar": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             // Hover Text Renderer
             "#hover_text": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             // Enchanting Book Renderer
             "#open": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             // Flying Item Renderer
             "flying_item_count": {
               "oneOf": [
-                { "type": "integer" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "flying_item_id_aux": {
               "oneOf": [
-                { "type": "integer" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "flying_item_custom_color": {
               "oneOf": [
-                { "type": "integer" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "flying_item_origin_position_x": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "flying_item_origin_position_y": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "flying_item_origin_scale": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "flying_item_destination_position_x": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "flying_item_destination_position_y": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "flying_item_destination_scale": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "flying_item_banner_patterns": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "flying_item_banner_colors": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             //
             "skin_pack_collection_name": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "timer_duration": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#should_host": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "is_local": {
               "description": "Version: +1.14",
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#is_left": {
               "description": "Version: +1.13",
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#is_skins": {
               "description": "Version: +1.13",
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#image_name": {
-              "description": "Version: +1.13",
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#is_dropdown": {
               "description": "Version: +1.11",
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#timer_field_count_to_show": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#owned_incompatible_prompt_color": {
-              "$ref": "#/definitions/vl:color"
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/vl:color"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "name": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
-            "#modal_title_text": { // CHECK LATER
-              "type": "string"
-            },
-            "#modal_label_text": {
-              "type": "string"
+            "#modal_title_text": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#buttons_visible": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#no_buttons_visible": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#single_button_visible": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#two_buttons_visible": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "reset_group": {
@@ -1111,271 +1337,588 @@
                     // +1.11
                     "accessibility"
                   ]
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
                 }
               ]
             },
             "#text": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "is_fixed_inventory": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "experimental_radio_button_state": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "classic_radio_button_state": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#slider_steps": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#slider_value": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#collection_prefix": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#visible": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#anchored_offset_value": {
               "description": "Legacy",
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#anchored_offset_value_x": {
-                "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+              "oneOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#anchored_offset_value_y": {
-                "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+              "oneOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#size_binding_x": {
-                "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+              "oneOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#size_binding_y": {
-                "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+              "oneOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#size_binding_x_absolute": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#size_binding_y_absolute": {
-                "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+              "oneOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#is_featured": {
-              "type": ["boolean", "string"]
+              "oneOf": [
+                {
+                  "type": [
+                    "boolean",
+                    "string"
+                  ]
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#disabled_filter_visible": {
-              "type": ["boolean", "string"]
+              "oneOf": [
+                {
+                  "type": [
+                    "boolean",
+                    "string"
+                  ]
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#common": {
               "oneOf": [
-                { "$ref": "#/definitions/vl:color" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "$ref": "#/definitions/vl:color"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#uncommon": {
               "oneOf": [
-                { "$ref": "#/definitions/vl:color" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "$ref": "#/definitions/vl:color"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#rare": {
               "oneOf": [
-                { "$ref": "#/definitions/vl:color" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "$ref": "#/definitions/vl:color"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#epic": {
               "oneOf": [
-                { "$ref": "#/definitions/vl:color" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "$ref": "#/definitions/vl:color"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#legendary": {
               "oneOf": [
-                { "$ref": "#/definitions/vl:color" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "$ref": "#/definitions/vl:color"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#max_upsell_offers": {
-              "type": "integer"
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#default_prompt_color": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#coin_prompt_color": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "control_id": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#visible_after_x_ratings": {
-              "type": ["boolean", "string"]
+              "oneOf": [
+                {
+                  "type": [
+                    "boolean",
+                    "string"
+                  ]
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#empty_star_texture": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#filled_star_texture": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#look_at_cursor": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#use_heart_offset": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#hyperlink": {
               "oneOf": [
-                { "$ref": "#/definitions/hc:links" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "$ref": "#/definitions/hc:links"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#flying_item_renderer": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#item_id_aux": {
-              "type": "integer"
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#collection_name": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#index": {
-              "type": ["integer", "string"]
+              "oneOf": [
+                {
+                  "type": [
+                    "integer",
+                    "string"
+                  ]
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#collection_index": {
-              "type": "integer"
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#property_field": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#hover_slice": {
-              "type": "integer"
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#start_selected": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#filtered_light_multiplier": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#tts_dialog_title": {
               "description": "Version: +1.11",
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#tts_dialog_body": {
               "description": "Version: +1.11",
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "force_update": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "opacity_override": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#playername": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#x_padding": {
               "oneOf": [
-                { "type": "number" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#sub_command": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#has_focus": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#banner_patterns": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#banner_colors": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#item_custom_color": {
-              "type": "number"
+              "oneOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#item_pickup_time": {
-              "type": "number"
+              "oneOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#block_position": {
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#panel_title": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             },
             "#toggle_state": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#bottom_left_block": {
@@ -1386,7 +1929,9 @@
                     "type": "number"
                   }
                 },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#top_right_block": {
@@ -1397,35 +1942,60 @@
                     "type": "number"
                   }
                 },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#include_entities": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#remove_blocks": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#include_players": {
               "oneOf": [
-                { "type": "boolean" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "boolean"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#button_navigation": {
               "oneOf": [
-                { "type": "integer" },
-                { "$ref": "#/definitions/vl:variable" }
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
               ]
             },
             "#category": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/definitions/vl:variable"
+                }
+              ]
             }
           }
         },
