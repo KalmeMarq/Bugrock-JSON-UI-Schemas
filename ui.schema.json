@@ -845,14 +845,7 @@
           "properties": {
             // Live Horse Renderer
             "#entity_id": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             // Paper Doll Renderer
             "entity_type": {
@@ -879,14 +872,7 @@
               ]
             },
             "#player_uuid": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#skin_rotation": {
               "oneOf": [
@@ -909,24 +895,10 @@
               ]
             },
             "#gesture_delta_source": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#gesture_mouse_delta_x": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#pack_id": {
               "oneOf": [
@@ -939,14 +911,7 @@
               ]
             },
             "#force_skin_update": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             // Progress Bar Renderer
             "#progress_bar_visible": {
@@ -1031,14 +996,7 @@
             },
             // Hover Text Renderer
             "#hover_text": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             // Enchanting Book Renderer
             "#open": {
@@ -1143,35 +1101,14 @@
               ]
             },
             "flying_item_banner_patterns": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "flying_item_banner_colors": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             //
             "skin_pack_collection_name": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "timer_duration": {
               "oneOf": [
@@ -1227,14 +1164,7 @@
               ]
             },
             "#image_name": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#is_dropdown": {
               "description": "Version: +1.11",
@@ -1268,24 +1198,10 @@
               ]
             },
             "name": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#modal_title_text": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#buttons_visible": {
               "oneOf": [
@@ -1344,14 +1260,7 @@
               ]
             },
             "#text": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "is_fixed_inventory": {
               "oneOf": [
@@ -1495,30 +1404,10 @@
               ]
             },
             "#is_featured": {
-              "oneOf": [
-                {
-                  "type": [
-                    "boolean",
-                    "string"
-                  ]
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#disabled_filter_visible": {
-              "oneOf": [
-                {
-                  "type": [
-                    "boolean",
-                    "string"
-                  ]
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#common": {
               "oneOf": [
@@ -1581,67 +1470,22 @@
               ]
             },
             "#default_prompt_color": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#coin_prompt_color": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "control_id": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#visible_after_x_ratings": {
-              "oneOf": [
-                {
-                  "type": [
-                    "boolean",
-                    "string"
-                  ]
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": ["boolean", "string"]
             },
             "#empty_star_texture": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#filled_star_texture": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#look_at_cursor": {
               "oneOf": [
@@ -1694,27 +1538,10 @@
               ]
             },
             "#collection_name": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#index": {
-              "oneOf": [
-                {
-                  "type": [
-                    "integer",
-                    "string"
-                  ]
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": ["integer", "string"]
             },
             "#collection_index": {
               "oneOf": [
@@ -1727,14 +1554,7 @@
               ]
             },
             "#property_field": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#hover_slice": {
               "oneOf": [
@@ -1768,25 +1588,11 @@
             },
             "#tts_dialog_title": {
               "description": "Version: +1.11",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#tts_dialog_body": {
               "description": "Version: +1.11",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "force_update": {
               "oneOf": [
@@ -1809,14 +1615,7 @@
               ]
             },
             "#playername": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#x_padding": {
               "oneOf": [
@@ -1829,14 +1628,7 @@
               ]
             },
             "#sub_command": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#has_focus": {
               "oneOf": [
@@ -1849,24 +1641,10 @@
               ]
             },
             "#banner_patterns": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#banner_colors": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#item_custom_color": {
               "oneOf": [
@@ -1902,14 +1680,7 @@
               ]
             },
             "#panel_title": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             },
             "#toggle_state": {
               "oneOf": [
@@ -1988,14 +1759,7 @@
               ]
             },
             "#category": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/definitions/vl:variable"
-                }
-              ]
+              "type": "string"
             }
           }
         },
