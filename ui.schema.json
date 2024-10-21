@@ -1081,6 +1081,9 @@
             "#modal_title_text": {
               "type": "string"
             },
+            "#modal_label_text": {
+              "type": "string"
+            },
             "#buttons_visible": {
               "oneOf": [
                 { "type": "boolean" },
@@ -1281,9 +1284,7 @@
             },
             "#hyperlink": {
               "oneOf": [
-                {
-                  "$ref": "#/definitions/hc:links"
-                },
+                { "$ref": "#/definitions/hc:links" },
                 { "$ref": "#/definitions/vl:variable" }
               ]
             },
