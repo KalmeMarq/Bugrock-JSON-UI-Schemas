@@ -580,7 +580,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "pattern": "^@[a-zA-Z0-9_]+\\.[a-zA-Z0-9_]+$"
+            "pattern": "^@([a-zA-Z0-9_]+\\.)?[a-zA-Z0-9_]+$"
           }
         },
         { "$ref": "#/definitions/vl:variable" }
@@ -1102,7 +1102,7 @@
               ]
             },
             "reset_group": {
-              "description": "...\nVersion: +1.2",
+              "description": "Resets user settings.\nVersion: +1.2",
               "oneOf": [
                 {
                   "enum": [
@@ -1284,7 +1284,10 @@
               ]
             },
             "#item_id_aux": {
-              "type": "integer"
+              "oneOf": [
+                { "type": "integer" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
             },
             "#collection_name": {
               "type": "string"
@@ -1327,6 +1330,7 @@
                 { "$ref": "#/definitions/vl:variable" }
               ]
             },
+            // Vignette Renderer
             "opacity_override": {
               "oneOf": [
                 { "type": "number" },
@@ -1343,6 +1347,7 @@
               ]
             },
             "#sub_command": {
+              "description": "Crashes if this is used in a button that is not inside a specific collection. (Hardcoded)",
               "type": "string"
             },
             "#has_focus": {
