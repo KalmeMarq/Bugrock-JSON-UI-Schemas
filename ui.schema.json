@@ -849,9 +849,14 @@
             },
             // Paper Doll Renderer
             "entity_type": {
-              "enum": [
-                "player",
-                "npc"
+              "oneOf": [
+                {
+                  "enum": [
+                    "player",
+                    "npc"
+                  ]
+                },
+                { "$ref": "#/definitions/vl:variable" }
               ]
             },
             "#skin_idx": {
@@ -864,7 +869,7 @@
               "type": "string"
             },
             "#skin_rotation": {
-               "oneOf": [
+              "oneOf": [
                 { "type": "boolean" },
                 { "$ref": "#/definitions/vl:variable" }
               ]
@@ -892,7 +897,7 @@
             },
             // Progress Bar Renderer
             "#progress_bar_visible": {
-               "oneOf": [
+              "oneOf": [
                 { "type": "boolean" },
                 { "$ref": "#/definitions/vl:variable" }
               ]
@@ -1049,7 +1054,6 @@
               ]
             },
             "#image_name": {
-              "description": "Version: +1.13",
               "type": "string"
             },
             "#is_dropdown": {
@@ -1066,12 +1070,15 @@
               ]
             },
             "#owned_incompatible_prompt_color": {
-              "$ref": "#/definitions/vl:color"
+              "oneOf": [
+                { "$ref": "#/definitions/vl:color" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
             },
             "name": {
               "type": "string"
             },
-            "#modal_title_text": { // CHECK LATER
+            "#modal_title_text": {
               "type": "string"
             },
             "#modal_label_text": {
@@ -1111,7 +1118,8 @@
                     // +1.11
                     "accessibility"
                   ]
-                }
+                },
+                { "$ref": "#/definitions/vl:variable" }
               ]
             },
             "#text": {
@@ -1167,25 +1175,25 @@
               ]
             },
             "#anchored_offset_value_x": {
-                "oneOf": [
+              "oneOf": [
                 { "type": "number" },
                 { "$ref": "#/definitions/vl:variable" }
               ]
             },
             "#anchored_offset_value_y": {
-                "oneOf": [
+              "oneOf": [
                 { "type": "number" },
                 { "$ref": "#/definitions/vl:variable" }
               ]
             },
             "#size_binding_x": {
-                "oneOf": [
+              "oneOf": [
                 { "type": "number" },
                 { "$ref": "#/definitions/vl:variable" }
               ]
             },
             "#size_binding_y": {
-                "oneOf": [
+              "oneOf": [
                 { "type": "number" },
                 { "$ref": "#/definitions/vl:variable" }
               ]
@@ -1197,7 +1205,7 @@
               ]
             },
             "#size_binding_y_absolute": {
-                "oneOf": [
+              "oneOf": [
                 { "type": "number" },
                 { "$ref": "#/definitions/vl:variable" }
               ]
@@ -1239,7 +1247,10 @@
               ]
             },
             "#max_upsell_offers": {
-              "type": "integer"
+              "oneOf": [
+                { "type": "integer" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
             },
             "#default_prompt_color": {
               "type": "string"
@@ -1296,13 +1307,19 @@
               "type": ["integer", "string"]
             },
             "#collection_index": {
-              "type": "integer"
+              "oneOf": [
+                { "type": "integer" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
             },
             "#property_field": {
               "type": "string"
             },
             "#hover_slice": {
-              "type": "integer"
+              "oneOf": [
+                { "type": "integer" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
             },
             "#start_selected": {
               "oneOf": [
@@ -1363,16 +1380,27 @@
               "type": "string"
             },
             "#item_custom_color": {
-              "type": "number"
+              "oneOf": [
+                { "type": "number" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
             },
             "#item_pickup_time": {
-              "type": "number"
+              "oneOf": [
+                { "type": "number" },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
             },
             "#block_position": {
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                { "$ref": "#/definitions/vl:variable" }
+              ]
             },
             "#panel_title": {
               "type": "string"
