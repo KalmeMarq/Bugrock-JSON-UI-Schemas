@@ -2150,7 +2150,13 @@
         {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "object",
+            "properties": {
+              "control_name": {
+                "type": "string"
+              }
+            },
+            "required": ["control_name"]
           }
         },
         { "$ref": "#/definitions/vl:variable" }
