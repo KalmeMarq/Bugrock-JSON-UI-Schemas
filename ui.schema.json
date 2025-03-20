@@ -2150,13 +2150,16 @@
         {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "control_name": {
-                "type": "string"
+            "anyOf": [
+              { "type": "string" },
+              {
+                "type": "object",
+                "properties": {
+                  "control_name": { "type": "string" }
+                },
+                "required": ["control_name"]
               }
-            },
-            "required": ["control_name"]
+            ]
           }
         },
         { "$ref": "#/definitions/vl:variable" }
