@@ -10,7 +10,14 @@ VSCode Settings Example
       "*.uidx",
       "ui/**/*.json",
       "!_global_variables.json",
-      "!_ui_defs.json"
+      "!_ui_defs.json",
+      "!/textures/**/*.json"
+    ]
+  },
+  {
+    "url": "https://kalmemarq.github.io/Bugrock-JSON-UI-Schemas/ui.sprite.schema.json",
+    "fileMatch": [
+      "textures/**/*.json"
     ]
   },
   {
