@@ -370,6 +370,12 @@
         "text_labels": { "$ref": "#/definitions/prop:text_labels" },
         //// Image Cycler
         "images": { "$ref": "#/definitions/prop:images" },
+        // Tooltip Trigger
+        "tooltip_name": { "$ref": "#/definitions/prop:tooltip_name" },
+        "tooltip_top_content_control": { "$ref": "#/definitions/prop:tooltip_top_content_control" },
+        "tooltip_bottom_content_control": { "$ref": "#/definitions/prop:tooltip_bottom_content_control" },
+        "tooltip_area": { "$ref": "#/definitions/prop:tooltip_area" },
+        "tooltip_tts_value": { "$ref": "#/definitions/prop:tooltip_tts_value" },
         // Equipment Preview Renderer
         "rotation_x": { "$ref": "#/definitions/prop:rotation_x" },
         "rotation_y": { "$ref": "#/definitions/prop:rotation_y" }
@@ -2995,7 +3001,7 @@
     },
     // Focus
     "prop:default_focus_precedence": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```",
       "oneOf": [
         {
           "type": "integer",
@@ -3005,7 +3011,7 @@
       ]
     }, 
     "prop:focus_enabled": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```",
       "default": false,
       "oneOf": [
        { "type": "boolean" },
@@ -3013,7 +3019,7 @@
      ]
     }, 
     "prop:focus_wrap_enabled": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid```\t\n\t\n**Version**: ```+1.2```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```\t\n\t\n**Version**: ```+1.2```",
       "default": false,
       "oneOf": [
         { "type": "boolean" },
@@ -3021,7 +3027,7 @@
       ]
     }, 
     "prop:focus_magnet_enabled": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid```\t\n\t\n**Version**: ```+1.2```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```\t\n\t\n**Version**: ```+1.2```",
       "default": false,
       "oneOf": [
         { "type": "boolean" },
@@ -3029,27 +3035,27 @@
       ]
     }, 
     "prop:focus_identifier": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```",
       "type": "string"
     }, 
     "prop:focus_change_down": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```",
       "type": "string"
     },
     "prop:focus_change_up": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```",
       "type": "string"
     },
     "prop:focus_change_left": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```",
       "type": "string"
     },
     "prop:focus_change_right": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```",
       "type": "string"
     }, 
     "prop:focus_mapping": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```",
       "oneOf": [
         {
           "type": "array",
@@ -3150,7 +3156,7 @@
     },
     // Input
     "prop:button_mappings": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```",
       "default": false,
       "oneOf": [
         {
@@ -3234,7 +3240,7 @@
       ] 
     },
     "prop:modal": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```",
       "default": false,
       "oneOf": [
         { "type": "boolean" },
@@ -3242,7 +3248,7 @@
       ] 
     },
     "prop:inline_modal": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel```\t\n\t\n**Version**: ```+1.1```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```\t\n\t\n**Version**: ```+1.1```",
       "default": false,
       "oneOf": [
         { "type": "boolean" },
@@ -3250,7 +3256,7 @@
       ] 
     },
     "prop:always_listen_to_input": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```",
       "default": false,
       "oneOf": [
         { "type": "boolean" },
@@ -3258,7 +3264,7 @@
       ] 
     },
     "prop:always_handle_pointer": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel```\t\n\t\nAlways handle pointer even if it goes outside of the element.\t\n\t\n**Default**: ```false```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```\t\n\t\nAlways handle pointer even if it goes outside of the element.\t\n\t\n**Default**: ```false```",
       "default": false,
       "oneOf": [
         { "type": "boolean" },
@@ -3266,7 +3272,7 @@
       ] 
     },
     "prop:always_handle_controller_direction": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel```\t\n\t\n**Default**: ```false```\t\n\t\n**Version**: ```+1.2```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```\t\n\t\n**Default**: ```false```\t\n\t\n**Version**: ```+1.2```",
       "default": false,
       "oneOf": [
         { "type": "boolean" },
@@ -3274,7 +3280,7 @@
       ]
     },
     "prop:hover_enabled": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel```\t\n\t\n**Default**: ```true```\t\n\t\n**Version**: ```+1.2```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```\t\n\t\n**Default**: ```true```\t\n\t\n**Version**: ```+1.2```",
       "default": true,
       "oneOf": [
         { "type": "boolean" },
@@ -3282,7 +3288,7 @@
       ]
     },
     "prop:prevent_touch_input": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel```\t\n\t\nPrevents touch events from firing.\t\n\t\n**Default**: ```false```\t\n\t\n**Version**: ```+1.10```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```\t\n\t\nPrevents touch events from firing.\t\n\t\n**Default**: ```false```\t\n\t\n**Version**: ```+1.10```",
       "default": false,
       "oneOf": [
         { "type": "boolean" },
@@ -3290,14 +3296,14 @@
       ]
     },
     "prop:consume_event": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel```\t\n\t\n**Version**: ```+1.2```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```\t\n\t\n**Version**: ```+1.2```",
       "oneOf": [
         { "type": "boolean" },
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
     "prop:consume_hover_events": {
-      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel```\t\n\t\n**Version**: ```+1.11```",
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```\t\n\t\n**Version**: ```+1.11```",
       "oneOf": [
         { "type": "boolean" },
         { "$ref": "#/definitions/vl:variable" }
@@ -3770,6 +3776,32 @@
         }
       ]
     },
+    // Tooltip Trigger
+    "prop:tooltip_name": {
+       "markdownDescription": "**Type**: ```Tooltip Trigger```",
+       "default": "",
+       "type": "string"
+    },
+    "prop:tooltip_top_content_control": {
+       "markdownDescription": "**Type**: ```Tooltip Trigger```\t\n\t\nControl name",
+       "default": "",
+       "type": "string"
+    },
+    "prop:tooltip_bottom_content_control": {
+       "markdownDescription": "**Type**: ```Tooltip Trigger```\t\n\t\nControl name",
+       "default": "",
+       "type": "string"
+    },
+    "prop:tooltip_area": {
+       "markdownDescription": "**Type**: ```Tooltip Trigger```\t\n\t\nControl name",
+       "default": "",
+       "type": "string"
+    },
+    "prop:tooltip_tts_value": {
+       "markdownDescription": "**Type**: ```Tooltip Trigger```",
+       "default": "",
+       "type": "string"
+    },
     // Equipment Preview Renderer
     "prop:rotation_x": {
       "markdownDescription": "**Type**: ```Custom (Equipment Preview Renderer)```",
@@ -3820,6 +3852,7 @@
         "image_cycler",
         "label_cycler",
         "collection_panel",
+        "tooltip_trigger",
         // Legacy
         "tab",
         "carousel_label",
