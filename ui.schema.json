@@ -76,6 +76,7 @@
         "shadow": { "$ref": "#/definitions/prop:shadow" },
         "hide_hyphen": { "$ref": "#/definitions/prop:hide_hyphen" },
         "notify_on_ellipses": { "$ref": "#/definitions/prop:notify_on_ellipses" },
+        "notify_ellipses_sibling": { "$ref": "#/definitions/prop:notify_ellipses_sibling" },
         "enable_profanity_filter": { "$ref": "#/definitions/prop:enable_profanity_filter" },
         "locked_alpha": { "$ref": "#/definitions/prop:locked_alpha" },
         "font_size": { "$ref": "#/definitions/prop:font_size" },
@@ -131,6 +132,7 @@
         "grayscale": { "$ref": "#/definitions/prop:grayscale" },
         "force_texture_reload": { "$ref": "#/definitions/prop:force_texture_reload" },
         "base_size": { "$ref": "#/definitions/prop:base_size" },
+        "color_corrected": { "$ref": "#/definitions/prop:color_corrected" },
         // Sound
         "sound_name": { "$ref": "#/definitions/prop:sound_name" },
         "sound_volume": { "$ref": "#/definitions/prop:sound_volume" },
@@ -150,6 +152,9 @@
         "iterate_left_button_name": { "$ref": "#/definitions/prop:iterate_left_button_name" },
         "iterate_right_button_name": { "$ref": "#/definitions/prop:iterate_right_button_name" },
         "initial_button_slice": { "$ref": "#/definitions/prop:initial_button_slice" },
+        "select_button_name": { "$ref": "#/definitions/prop:select_button_name" },
+        "hover_button_name": { "$ref": "#/definitions/prop:hover_button_name" },
+        "analog_button_name": { "$ref": "#/definitions/prop:analog_button_name" },
         // Dropdown
         "dropdown_name": { "$ref": "#/definitions/prop:dropdown_name" },
         "dropdown_content_control": { "$ref": "#/definitions/prop:dropdown_content_control" },
@@ -256,11 +261,13 @@
         "factory": { "$ref": "#/definitions/prop:factory" },
         "control_name": { "$ref": "#/definitions/prop:control_name" },
         "control_ids": { "$ref": "#/definitions/prop:control_ids" },
+        "factory_variables": { "$ref": "#/definitions/prop:factory_variables" },
         // Data Binding
         "bindings": { "$ref": "#/definitions/prop:bindings" },
         // Collection
         "collection_name": { "$ref": "#/definitions/prop:collection_name" }, 
-        "collection_index": { "$ref": "#/definitions/prop:collection_index" }, 
+        "collection_index": { "$ref": "#/definitions/prop:collection_index" },
+        "ignoreCollectionItem": { "$ref": "#/definitions/prop:ignoreCollectionItem" },
         // Focus
         "default_focus_precedence": { "$ref": "#/definitions/prop:default_focus_precedence" }, 
         "focus_enabled": { "$ref": "#/definitions/prop:focus_enabled" }, 
@@ -298,6 +305,7 @@
         "consume_event": { "$ref": "#/definitions/prop:consume_event" },
         "consume_hover_events": { "$ref": "#/definitions/prop:consume_hover_events" },
         "gesture_tracking_button": { "$ref": "#/definitions/prop:gesture_tracking_button" },
+        "gamepad_deflection_mode": { "$ref": "#/definitions/prop:gamepad_deflection_mode" },
         // Screen
         "render_only_when_topmost": { "$ref": "#/definitions/prop:render_only_when_topmost" },
         "screen_not_flushable": { "$ref": "#/definitions/prop:screen_not_flushable" },
@@ -321,13 +329,14 @@
         "use_custom_pocket_toast": { "$ref": "#/definitions/prop:use_custom_pocket_toast" },
         // Custom Renderer
         "renderer": { "$ref": "#/definitions/prop:renderer" },
+        "replaced_while_inactive": { "$ref": "#/definitions/prop:replaced_while_inactive" },
         // Custom - Paper Doll Renderer
         "camera_tilt_degrees": { "$ref": "#/definitions/prop:camera_tilt_degrees" },
         "starting_rotation": { "$ref": "#/definitions/prop:starting_rotation" },
         "use_selected_skin": { "$ref": "#/definitions/prop:use_selected_skin" }, 
         "use_uuid": { "$ref": "#/definitions/prop:use_uuid" }, 
         "use_skin_gui_scale": { "$ref": "#/definitions/prop:use_skin_gui_scale" }, 
-        "use_player_paperdoll ": { "$ref": "#/definitions/prop:use_player_paperdoll" }, 
+        "use_player_paperdoll": { "$ref": "#/definitions/prop:use_player_paperdoll" }, 
         "rotation": { "$ref": "#/definitions/prop:rotation" },
         "modelsize": { "$ref": "#/definitions/prop:modelsize" },
         "animation_looped": { "$ref": "#/definitions/prop:animation_looped" },
@@ -1022,6 +1031,17 @@
             "flying_item_banner_colors": {
               "type": "string"
             },
+            // Gif Renderer
+            "#gif_path": {
+              "type": "string"
+            },
+            "#pause_gif": {
+              "type": "string"
+            },
+            // QrCode Renderer
+            "#qr_code_content": {
+              "type": "string"
+            },
             //
             "skin_pack_collection_name": {
               "type": "string"
@@ -1646,6 +1666,14 @@
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
+    "prop:notify_ellipses_sibling": {
+      "markdownDescription": "**Type**: ```Label```\t\n\t\n**Default**: ```false```",
+      "default": false,
+      "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
     "prop:enable_profanity_filter": {
       "markdownDescription": "**Type**: ```Label```\t\n\t\nCensore words included in the profanity_filter.wlist file.\t\n\t\n**Default**: ```false```",
       "default": false,
@@ -2061,6 +2089,14 @@
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
+    "prop:color_corrected": {
+      "markdownDescription": "**Type**: ```Image```",
+      "default": false,
+      "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
     // Sound
     "prop:sound_name": {
       "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Input Panel | Selection Wheel | Screen```\t\n\t\nName of the sound event to be played.",
@@ -2225,6 +2261,18 @@
         { "type": "integer" },
         { "$ref": "#/definitions/vl:variable" }
       ]
+    },
+    "prop:select_button_name": {
+      "markdownDescription": "**Type**: ```Selection Wheel```",
+      "type": "string"
+    },
+    "prop:hover_button_name": {
+      "markdownDescription": "**Type**: ```Selection Wheel```",
+      "type": "string"
+    },
+    "prop:analog_button_name": {
+      "markdownDescription": "**Type**: ```Selection Wheel```",
+      "type": "string"
     },
     // Dropdown
     "prop:dropdown_name": {
@@ -2910,6 +2958,18 @@
       "markdownDescription": "**Type**: ```Factory```",
       "type": "string"
     },
+    "prop:factory_variables": {
+      "markdownDescription": "**Type**: ```Factory```",
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
     // Data Binding
     "prop:bindings": { 
       "markdownDescription": "**Type**: ```Any```\t\n\t\nBind data (coming from the code) to this UI element to use.",
@@ -2999,13 +3059,20 @@
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
+    "prop:ignoreCollectionItem": {
+      "markdownDescription": "**Type**: ```Any```",
+      "default": false,
+        "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
     // Focus
     "prop:default_focus_precedence": {
       "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Edit Box | Input Panel | Grid | Tooltip Trigger```",
       "oneOf": [
         {
-          "type": "integer",
-          "minimum": 0
+          "type": "integer"
         },
         { "$ref": "#/definitions/vl:variable" }
       ]
@@ -3316,6 +3383,14 @@
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
+    "prop:gamepad_deflection_mode": {
+      "markdownDescription": "**Type**: ```Button | Toggle | Dropdown | Slider | Slider Box | Edit Box | Input Panel | Scrollbar Box | Scrollbar Track | Scroll View | Screen | Selection Wheel | Tooltip Trigger```",
+      "default": true,
+      "oneOf": [
+        { "type": "boolean" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
     // Screen
     "prop:render_only_when_topmost": {
       "markdownDescription": "**Type**: ```Screen```\t\n\t\nIf the screen should only render when it's the top most screen in the screen stack.",
@@ -3478,6 +3553,14 @@
       "markdownDescription": "**Type**: ```Custom```\t\n\t\nSpecial elements that are created in the code because they are too complex for JSON UI.",
       "oneOf": [
         { "$ref": "#/definitions/vl:renderer" },
+        { "$ref": "#/definitions/vl:variable" }
+      ]
+    },
+    "prop:replaced_while_inactive": {
+      "markdownDescription": "**Type**: ```Custom```",
+      "default": false,
+      "oneOf": [
+        { "type": "boolean" },
         { "$ref": "#/definitions/vl:variable" }
       ]
     },
@@ -3821,7 +3904,7 @@
     },
     "vl:variable": {
       "type": "string",
-      "pattern": "^((\\$|#)[a-zA-Z0-9_.]+|\\(.*\\))$"
+      "pattern": "^((\\$|#)[a-zA-Z0-9_.-]+|\\(.*\\))$"
     },
     "vl:animation": {
       "type": "string",
@@ -4072,6 +4155,10 @@
         "editor_volume_highlight_renderer",
         "editor_compass_renderer",
         "profile_image_renderer",
+        "locator_bar",
+        "bundle_tooltip_renderer",
+        "animated_gif_renderer",
+        "qr_code_renderer",
         // Chemistry
         "bohr_model_renderer",
         // 0.16
