@@ -305,6 +305,7 @@ VSCode Settings Example
 | ```label_cycler```        | >=1.19        | [Label Cycler](#label-cycler), [Cycler](#cycler), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                              |
 | ```image_cycler```        | >=1.19        | [Image Cycler](#image-cycler), [Cycler](#cycler), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                              |
 | ```collection_panel```    | >=1.19        | [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                                                                                |
+| ```tooltip_trigger```     | >=1.21.80     | [Tooltip Trigger](#tooltip-trigger), [Input](#input), [Focus](#focus), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                         |
 | ```carousel_label```      | >=0.14? <=?   | [Carousel Label](#carousel-label-unusedno-longer-works), [Controls](#control), [Layout](#layout) and [Data Binding](#data-binding)                                       |
 
 ## Properties
@@ -829,6 +830,15 @@ These properties were misspelled. It took a while for the devs to notice. Classi
 | Name               | Type   |
 | ------------------ | ------ |
 | ```texture_path``` | string |
+
+### Tooltip Trigger
+| Name                                 | Type                  |
+| ------------------------------------ | --------------------- |
+| ```tooltip_name```                   | string                |
+| ```tooltip_top_content_control```    | string                |
+| ```tooltip_bottom_content_control``` | string                |
+| ```tooltip_area```                   | string (control name) |
+| ```tooltip_tts_value```              | string                |
 
 ### Tab
 
